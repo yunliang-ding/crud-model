@@ -1,0 +1,80 @@
+.table-designer-playground {
+  width: 100%;
+  height: 100%;
+  background-color: #eee;
+  &-header {
+    display: flex;
+    height: 54px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 22px;
+    padding-right: 12px;
+    background-color: #fff;
+    position: relative;
+    margin-bottom: 12px;
+    &-project-info {
+      margin-left: 20px;
+      color: #111;
+      span {
+        font-size: 12px;
+        font-weight: 700;
+      }
+      a, input {
+        font-size: 12px;
+        font-weight: 700;
+      }
+    }
+    div {
+      font-size: 13px;
+      font-weight: 600;
+      color: #111;
+    }
+  }
+  &-body {
+    height: calc(100% - 76px);
+    gap: 10px;
+    margin-top: 10px;
+    z-index: 2;
+    padding: 0 10px;
+    display: flex;
+    .widgets-panel {
+      width: 280px;
+      height: 100%;
+      overflow: auto;
+    }
+    .table-canvas {
+      width: calc(100% - 680px);
+      height: 100%;
+      .ant-card-head {
+        height: 44px;
+        display: flex;
+        padding-right: 14px;
+        .ant-card-head-wrapper {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+      .form-canvas-card-box {
+        background: transparent;
+        .ant-card-body {
+          background: transparent;
+          min-width: 400px;
+        }
+      }
+    }
+    .props-config-panel {
+      width: 400px;
+      height: 100%;
+      .ant-segmented {
+        padding: 0;
+        .ant-segmented-group {
+          height: 100%;
+        }
+      }
+      .props-config-panel-body {
+        height: calc(100% - 44px);
+      }
+    }
+  }
+}

@@ -21,6 +21,7 @@
     ]
   },
   "plugins": [
+    "./build.plugins.monaco.ts",
     [
       "build-plugin-antd",
       {

@@ -1,6 +1,14 @@
 @import '~antd/dist/antd.less';
 body {
   -webkit-font-smoothing: antialiased;
+  button {
+    span {
+      font-weight: 600;
+    }
+  }
+  label {
+    font-weight: 600;
+  }
 }
 .ant-select-selection-item-content {
   white-space: normal !important;
@@ -55,4 +63,10 @@ body {
   .ant-table-pagination-right {
     border: none !important
   }
+}
+
+.ant-table-cell,
+.ant-pro-menu-item-title,
+.ant-breadcrumb-link {
+  font-weight: 600 !important;
 }

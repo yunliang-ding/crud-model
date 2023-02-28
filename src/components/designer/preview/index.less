@@ -1,0 +1,24 @@
+.designer-preview-wapper{
+  width: 100vw;
+  height: 100vh;
+  &-header{
+    height: 48px;
+    width: 100%;
+    box-shadow: 1px 1px 2px #eee;
+  }
+  &-sider{
+    height: calc(100vh - 48px);
+    width: 100%;
+    display: flex;
+    &-left{
+      width: 208px;
+      height: 100%;
+    }
+    &-right{
+      height: 100%;
+      padding: 20px;
+      background-color: #f0f2f5;
+      width: calc(100% - 208px);
+    }
+  }
+}

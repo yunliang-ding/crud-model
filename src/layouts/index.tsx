@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import Layout from './layout';
 import Loading from '@/components/loading';
+import DesignerPreview from '@/components/designer/preview'
 import Error from '@/components/error';
 import NoPermissions from '@/pages/403';
 import store from '@/store';
@@ -13,7 +14,9 @@ export default (props: any) => {
   useEffect(() => {
     userDispatchers.fetchUserInfo(setAuth);
   }, []);
-  console.log(uiState);
+  if (props.location.pathname === '/designer/preview') {
+    return <DesignerPreview {...props} />;
+  }
   if (uiState.status === 'loading') {
     return <Loading />;
   }else if (uiState.status === 'error') {
