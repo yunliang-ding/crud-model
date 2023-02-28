@@ -20,6 +20,7 @@
       "components"
     ]
   },
+  "publicPath": "https://yun-static.cdn.bcebos.com/crud-model/",
   "plugins": [
     "./build.plugins.monaco.ts",
     [

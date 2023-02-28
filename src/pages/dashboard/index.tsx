@@ -1,16 +1,16 @@
 /* eslint-disable no-nested-ternary */
 import { useEffect, useState } from 'react';
-import { Button, CreateModal } from 'react-core-form';
-import { Alert, Avatar, Dropdown, Empty, Menu, Spin } from 'antd';
+import { CreateModal } from 'react-core-form';
+import { Avatar, Dropdown, Empty, Menu, Spin } from 'antd';
 import DesignerForm from '@/components/designer/form';
 import DesignerTable from '@/components/designer/table';
 import Sider from './sider';
 import formSchema from './form.schema';
-import Marquee from 'react-fast-marquee';
 import { outLogin } from '@/services/common';
 import { getList } from './services';
 import store from '@/store';
 import './index.less';
+import AlertNotice from '@/layouts/alert-notice';
 
 const prefixCls = 'app-form-designer-dashboard';
 
@@ -67,23 +67,7 @@ export default () => {
           </div>
         </div>
         <div className={`${prefixCls}-header-marquee`}>
-          <Alert
-            banner
-            action={
-              <Button size="small" type="link">
-                version 1.0.0
-              </Button>
-            }
-            style={{ padding: '6px 20px' }}
-            description={
-              <Marquee pauseOnHover gradient={false} delay={2}>
-                介绍：可快速搭建 Crud
-                模型、让前端开发专注于业务本身，不需要专注模型的编写，可视化
-                基于 react-core-form-designer 提供的相关组件以及api，底层基于
-                react-core-form 提供的模型渲染能力。
-              </Marquee>
-            }
-          />
+          <AlertNotice />
         </div>
         <div className={`${prefixCls}-header-tools`}>
           <div className={`${prefixCls}-header-tools-item`}>
