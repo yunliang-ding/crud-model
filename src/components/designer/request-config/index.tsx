@@ -1,8 +1,6 @@
-import React from 'react';
 import axios from 'axios';
 import { notification } from 'antd';
-import { FunctionEditor, getTools } from 'react-core-form-designer';
-import { CreateDrawer } from 'react-core-form';
+import { CreateDrawer, CodeEditor, Tools } from 'react-core-form';
 import { decode, encode } from '@/util';
 import { update } from '@/pages/dashboard/services';
 
@@ -10,7 +8,7 @@ export const defaultRequestConfig = {
   baseURL: 'http://121.4.49.147:8361',
   tokenKey: 'appkey',
   tokenValue: 'TttxBH3CxRumOqHyJV34WbUt00B3CZKwP',
-  code: getTools().encrypt(`import request from 'request';
+  code: Tools.encrypt(`import request from 'request';
 
 export const getList = (params) => {
   return request.post('/xx/list', params);
@@ -89,17 +87,14 @@ const requestConfigDrawer = (schemaEntity) =>
       },
       {
         type: ({ value, onChange }) => {
-          const functionRef = React.useRef({});
           return (
-            <FunctionEditor
-              prefix=""
+            <CodeEditor
               style={{
                 height: 'calc(100vh - 370px)',
                 width: '100%',
               }}
-              useEncrypt={false}
+              mode='function'
               onChange={onChange}
-              functionRef={functionRef}
               require={{
                 request: axios,
               }}

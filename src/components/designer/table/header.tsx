@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-import { MonacoEditor } from 'react-core-form-designer';
-import { Button, CreateDrawer } from 'react-core-form';
+import { Button, CreateDrawer, CodeEditor } from 'react-core-form';
 import { message, Space, Input } from 'antd';
 import { openRequestConfigDrawer } from '../request-config';
 import './index.less';
@@ -18,15 +17,9 @@ const exportDrawer = CreateDrawer({
   },
   render({ value }) {
     return (
-      <MonacoEditor
+      <CodeEditor
         value={value.code}
-        id="export-schema"
-        options={{
-          theme: 'vs-dark',
-          minimap: {
-            enabled: false,
-          },
-        }}
+        minimapEnabled={false}
       />
     );
   },

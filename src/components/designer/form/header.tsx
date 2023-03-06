@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getTools, MonacoEditor } from 'react-core-form-designer';
-import { Button, CardForm, CreateDrawer } from 'react-core-form';
+import { Button, CardForm, CreateDrawer, CodeEditor, Tools } from 'react-core-form';
 import { message, Space, Input } from 'antd';
 import { openRequestConfigDrawer } from '../request-config';
 import { copyImg } from '@/util';
@@ -18,15 +17,9 @@ const exportDrawer = CreateDrawer({
   },
   render({ value }) {
     return (
-      <MonacoEditor
+      <CodeEditor
         value={value.code}
-        id="export-schema"
-        options={{
-          theme: 'vs-dark',
-          minimap: {
-            enabled: false,
-          },
-        }}
+        minimapEnabled={false}
       />
     );
   },
@@ -48,9 +41,8 @@ export default ({ formDesignerRef, schemaEntity, saveOrUpdate }) => {
     <div className="form-designer-playground-header">
       <div className="app-form-render-result">
         <CardForm
-          {...getTools().babelParse({
+          {...Tools.babelParse({
             code: copyImgSchema,
-            prefix: '',
           })}
         />
       </div>
