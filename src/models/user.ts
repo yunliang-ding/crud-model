@@ -38,14 +38,14 @@ export default {
         if (code === 200) {
           const auth = {}; // 权限集合
           recursion(data.menus, auth);
-          setAuth(auth)
+          setAuth(auth);
           dispatch.user.update({
             ...data,
           });
           dispatch.ui.update({
             status: 'success',
           });
-        } else {
+        } else if (code !== 40005) {
           dispatch.ui.update({
             status: 'error',
           });
