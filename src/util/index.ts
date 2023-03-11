@@ -6,47 +6,13 @@ import html2canvas from 'html2canvas';
 /**
  * iconUrl
  */
-export const iconUrl = '//at.alicdn.com/t/c/font_3520199_myxvkjekli.js';
+export const iconUrl = '//at.alicdn.com/t/c/font_3945872_hr5g04sst09.js';
 /**
  * icon
  */
 export const Icon = createFromIconfontCN({
   scriptUrl: iconUrl,
 });
-
-export const encode = (str): string => {
-  try {
-    return btoa(encodeURIComponent(str));
-  } catch (error) {
-    console.log(error);
-    return '';
-  }
-};
-
-export const decode = (str): string => {
-  try {
-    return decodeURIComponent(atob(str));
-  } catch (error) {
-    console.log(error);
-    return '';
-  }
-};
-
-export const isEmpty = (param: any) => {
-  if (param === null || param === undefined) {
-    return true;
-  }
-  if (Array.isArray(param)) {
-    return param.length === 0;
-  }
-  if (typeof param === 'string') {
-    return param.trim() === '';
-  }
-  if (typeof param === 'object') {
-    return Object.keys(param).length === 0;
-  }
-  return false;
-};
 
 /**
  * html2canvas
@@ -88,15 +54,4 @@ export const isEmpty = (param: any) => {
       }, 'image/png');
     });
   });
-};
-
-export const getUrlSearchParams: any = (
-  search = decodeURIComponent(location.hash).split('?')[1],
-) => {
-  const params = {};
-  const searchParams: any = new URLSearchParams(search);
-  searchParams.forEach((value, key) => {
-    params[key] = value;
-  });
-  return params;
 };

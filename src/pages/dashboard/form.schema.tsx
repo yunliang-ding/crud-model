@@ -1,6 +1,5 @@
-import { encode } from '@/util';
 import { notification } from 'antd';
-import { SchemaProps } from 'react-core-form';
+import { SchemaProps, Tools } from 'react-core-form';
 import { add } from './services';
 
 export default ({
@@ -19,7 +18,7 @@ export default ({
     async onSubmit(values) {
       const { code } = await add({
         ...values,
-        schema: initialValues.id ? initialValues.schema : encode('{}'),
+        schema: initialValues.id ? initialValues.schema : Tools.encode('{}'),
       });
       if (code === 200) {
         notification.success({

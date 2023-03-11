@@ -2,6 +2,7 @@ import { Button, CreateModal } from 'react-core-form';
 import { Dropdown, Menu, notification, Empty } from 'antd';
 import formSchema from './form.schema';
 import { remove } from './services';
+import { Icon } from '@/util';
 
 export default ({
   query,
@@ -85,9 +86,9 @@ export default ({
                 }
               >
                 {item.type === 'form' ? (
-                  <i className="iconfont spicon-biaodansheji" />
+                  <Icon type="icon-biaodansheji" />
                 ) : (
-                  <i className="iconfont spicon-biaoge" />
+                  <Icon type="icon-biaoge" />
                 )}
                 {item.name}
               </div>

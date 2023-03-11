@@ -1,9 +1,11 @@
 import { useEffect, useRef } from 'react';
+import { Tools } from 'react-core-form';
 import { FormDesigner } from 'react-core-form-designer';
 import { message, notification } from 'antd';
 import Header from './header';
-import { decode, encode, isEmpty } from '@/util';
 import { update } from '@/pages/dashboard/services';
+
+const { decode, encode, isEmpty } = Tools;
 
 export default ({ schemaEntity }) => {
   const formDesignerRef: any = useRef({});

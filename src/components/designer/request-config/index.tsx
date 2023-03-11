@@ -1,8 +1,9 @@
 import axios from 'axios';
 import { notification } from 'antd';
 import { CreateDrawer, CodeEditor, Tools } from 'react-core-form';
-import { decode, encode } from '@/util';
 import { update } from '@/pages/dashboard/services';
+
+const { decode, encode } = Tools;
 
 export const defaultRequestConfig = {
   baseURL: 'http://121.4.49.147:8361',
@@ -93,7 +94,7 @@ const requestConfigDrawer = (schemaEntity) =>
                 height: 'calc(100vh - 370px)',
                 width: '100%',
               }}
-              mode='function'
+              mode="function"
               onChange={onChange}
               require={{
                 request: axios,
@@ -110,7 +111,7 @@ const requestConfigDrawer = (schemaEntity) =>
     async onSubmit(values) {
       const { code } = await update({
         ...schemaEntity,
-        services: encode(JSON.stringify(values))
+        services: encode(JSON.stringify(values)),
       });
       if (code === 200) {
         notification.success({
@@ -118,7 +119,7 @@ const requestConfigDrawer = (schemaEntity) =>
           description: '保存成功',
         });
       } else {
-        return Promise.reject()
+        return Promise.reject();
       }
     },
   });

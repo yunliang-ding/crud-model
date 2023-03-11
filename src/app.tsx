@@ -6,7 +6,7 @@ import { notification } from 'antd';
 import NoAuthority from '@/pages/403';
 import ErrorBoundary from '@/pages/error-boundary';
 
-const APPID = 10; // 具体的应用ID
+const APPID = 1; // 具体的应用ID
 
 const appConfig: any = {
   request: {

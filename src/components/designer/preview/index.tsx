@@ -1,9 +1,11 @@
-import { getUrlSearchParams } from '@/util';
+import { Tools } from 'react-core-form';
 import { CrudModelRender } from 'react-core-form-designer';
 import './index.less';
 
-export default ({ location: { search } }) => {
-  const { id } = getUrlSearchParams(search);
+const { getUrlSearchParams } = Tools;
+
+export default () => {
+  const { id }: any = getUrlSearchParams(location.hash);
   const PreviewRender: any = CrudModelRender;
   return (
     <div className="designer-preview-wapper">

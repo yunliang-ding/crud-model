@@ -2,15 +2,14 @@
 import { useEffect, useState } from 'react';
 import { CreateModal } from 'react-core-form';
 import { Avatar, Dropdown, Empty, Menu, Spin } from 'antd';
-import DesignerForm from '@/components/designer/form';
-import DesignerTable from '@/components/designer/table';
 import Sider from './sider';
+import View from '@/pages/view';
 import formSchema from './form.schema';
 import { outLogin } from '@/services/common';
 import { getList } from './services';
 import store from '@/store';
-import './index.less';
 import AlertNotice from '@/layouts/alert-notice';
+import './index.less';
 
 const prefixCls = 'app-form-designer-dashboard';
 
@@ -132,11 +131,7 @@ export default () => {
         </div>
         <div className={`${prefixCls}-main-content`}>
           {currentMenuId ? (
-            currentMenu?.type === 'form' ? (
-              <DesignerForm schemaId={currentMenuId} key={currentMenuId} />
-            ) : (
-              <DesignerTable schemaId={currentMenuId} key={currentMenuId} />
-            )
+            <View type={currentMenu?.type} schemaId={currentMenu?.id} />
           ) : (
             <Empty
               image={Empty.PRESENTED_IMAGE_SIMPLE}
