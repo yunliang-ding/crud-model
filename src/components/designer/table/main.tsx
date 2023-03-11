@@ -1,11 +1,9 @@
 import { useRef } from 'react';
-import { Tools } from 'react-core-form';
+import { decode, encode, isEmpty } from 'react-core-form-tools';
 import { message, notification } from 'antd';
 import { TableDesigner } from 'react-core-form-designer';
 import { getList, update } from '@/pages/dashboard/services';
 import Header from './header';
-
-const { decode, encode, isEmpty } = Tools;
 
 export default ({ schemaEntity }) => {
   const tableDesignerRef: any = useRef({});

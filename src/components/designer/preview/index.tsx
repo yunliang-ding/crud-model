@@ -1,8 +1,6 @@
-import { Tools } from 'react-core-form';
+import { getUrlSearchParams } from 'react-core-form-tools';
 import { CrudModelRender } from 'react-core-form-designer';
 import './index.less';
-
-const { getUrlSearchParams } = Tools;
 
 export default () => {
   const { id }: any = getUrlSearchParams(location.hash);

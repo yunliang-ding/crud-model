@@ -1,15 +1,14 @@
 import axios from 'axios';
 import { notification } from 'antd';
-import { CreateDrawer, CodeEditor, Tools } from 'react-core-form';
+import { CreateDrawer, CodeEditor, encrypt } from 'react-core-form';
+import { decode, encode } from 'react-core-form-tools';
 import { update } from '@/pages/dashboard/services';
-
-const { decode, encode } = Tools;
 
 export const defaultRequestConfig = {
   baseURL: 'http://121.4.49.147:8361',
   tokenKey: 'appkey',
   tokenValue: 'TttxBH3CxRumOqHyJV34WbUt00B3CZKwP',
-  code: Tools.encrypt(`import request from 'request';
+  code: encrypt(`import request from 'request';
 
 export const getList = (params) => {
   return request.post('/xx/list', params);

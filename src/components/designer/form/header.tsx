@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Button, CardForm, CreateDrawer, CodeEditor, Tools } from 'react-core-form';
+import { Button, CardForm, CreateDrawer, CodeEditor, babelParse } from 'react-core-form';
 import { message, Space, Input } from 'antd';
 import { openRequestConfigDrawer } from '../request-config';
 import { copyImg } from '@/util';
@@ -41,7 +41,7 @@ export default ({ formDesignerRef, schemaEntity, saveOrUpdate }) => {
     <div className="form-designer-playground-header">
       <div className="app-form-render-result">
         <CardForm
-          {...Tools.babelParse({
+          {...babelParse({
             code: copyImgSchema,
           })}
         />
