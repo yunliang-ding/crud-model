@@ -14,11 +14,7 @@
     }
   },
   "router": {
-    "ignorePaths": [
-      "schema",
-      "component",
-      "components"
-    ]
+    "ignorePaths": ["schema", "component", "components"]
   },
   "plugins": [
     [
@@ -35,9 +31,7 @@
     [
       "build-plugin-moment-locales",
       {
-        "locales": [
-          "zh-cn"
-        ]
+        "locales": ["zh-cn"]
       }
     ],
     [
@@ -45,20 +39,22 @@
       {
         "assets": {
           "start": [
-            "https://cdn.bootcdn.net/ajax/libs/prettier/2.8.4/standalone.min.js",
-            "https://cdn.bootcdn.net/ajax/libs/prettier/2.8.4/parser-typescript.min.js",
+            "https://g.alicdn.com/code/lib/babel-standalone/7.21.2/babel.min.js",
+            "https://g.alicdn.com/wisdomhammer/govding/prism.js",
+            "https://g.alicdn.com/code/lib/prettier/2.0.3/standalone.min.js",
+            "https://g.alicdn.com/code/lib/prettier/2.0.3/parser-typescript.min.js",
             "https://g.alicdn.com/code/lib/react/17.0.2/umd/react.development.min.js",
-            "https://cdn.bootcdn.net/ajax/libs/babel-standalone/7.21.2/babel.min.js",
             "https://g.alicdn.com/code/lib/react-dom/17.0.2/umd/react-dom.development.min.js",
             "https://g.alicdn.com/code/lib/monaco-editor/0.36.0/min/vs/loader.min.js",
             "https://g.alicdn.com/code/lib/monaco-editor/0.36.0/min/vs/editor/editor.main.min.css"
           ],
           "build": [
-            "https://cdn.bootcdn.net/ajax/libs/prettier/2.8.4/standalone.min.js",
-            "https://cdn.bootcdn.net/ajax/libs/prettier/2.8.4/parser-typescript.min.js",
-            "https://cdn.bootcdn.net/ajax/libs/babel-standalone/7.21.2/babel.min.js",
-            "https://g.alicdn.com/code/lib/react/17.0.2/umd/react.production.min.js",
-            "https://g.alicdn.com/code/lib/react-dom/17.0.2/umd/react-dom.production.min.js",
+            "https://g.alicdn.com/code/lib/babel-standalone/7.21.2/babel.min.js",
+            "https://g.alicdn.com/wisdomhammer/govding/prism.js",
+            "https://g.alicdn.com/code/lib/prettier/2.0.3/standalone.min.js",
+            "https://g.alicdn.com/code/lib/prettier/2.0.3/parser-typescript.min.js",
+            "https://g.alicdn.com/code/lib/react/17.0.2/umd/react.development.min.js",
+            "https://g.alicdn.com/code/lib/react-dom/17.0.2/umd/react-dom.development.min.js",
             "https://g.alicdn.com/code/lib/monaco-editor/0.36.0/min/vs/loader.min.js",
             "https://g.alicdn.com/code/lib/monaco-editor/0.36.0/min/vs/editor/editor.main.min.css"
           ]
