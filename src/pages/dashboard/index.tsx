@@ -131,7 +131,7 @@ export default () => {
         </div>
         <div className={`${prefixCls}-main-content`}>
           {currentMenuId ? (
-            <View type={currentMenu?.type} schemaId={currentMenu?.id} />
+            <View type={currentMenu?.type} schemaId={currentMenu?.id} key={currentMenu?.id} />
           ) : (
             <Empty
               image={Empty.PRESENTED_IMAGE_SIMPLE}
