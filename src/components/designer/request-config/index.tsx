@@ -94,6 +94,7 @@ const requestConfigDrawer = (schemaEntity) =>
                 width: '100%',
               }}
               mode="function"
+              debounceTime={0}
               onChange={onChange}
               require={{
                 request: axios,
@@ -108,11 +109,13 @@ const requestConfigDrawer = (schemaEntity) =>
       },
     ],
     async onSubmit(values) {
+      const services = encode(JSON.stringify(values));
       const { code } = await update({
         ...schemaEntity,
-        services: encode(JSON.stringify(values)),
+        services
       });
       if (code === 200) {
+        schemaEntity.services = services;
         notification.success({
           message: '提示',
           description: '保存成功',

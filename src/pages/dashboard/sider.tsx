@@ -7,6 +7,7 @@ import { Icon } from '@/util';
 export default ({
   query,
   items,
+  setItems,
   setCurrentMenuId,
   currentMenuId,
   prefixCls,
@@ -50,9 +51,7 @@ export default ({
                       content: `是否确认删除模型(${item.name})?`,
                     }}
                     onClick={async () => {
-                      const {
-                        data: { code },
-                      } = await remove(item.id);
+                      const { code } = await remove(item.id);
                       if (code === 200) {
                         notification.success({
                           message: '提示',

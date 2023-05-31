@@ -111,6 +111,7 @@ export default () => {
             {expand && (
               <Sider
                 items={data}
+                setItems={setData}
                 setCurrentMenuId={setCurrentMenuId}
                 currentMenuId={currentMenuId}
                 prefixCls={prefixCls}
