@@ -1,6 +1,7 @@
 import { getUrlSearchParams } from 'react-core-form-tools';
 import { CrudModelRender } from 'react-core-form-designer';
 import './index.less';
+import { APPID } from '@/app';
 
 export default () => {
   const { id }: any = getUrlSearchParams(location.hash);
@@ -11,7 +12,7 @@ export default () => {
       <div className="designer-preview-wapper-sider">
         <div className="designer-preview-wapper-sider-left" />
         <div className="designer-preview-wapper-sider-right">
-          <PreviewRender schemaId={id} />
+          <PreviewRender schemaId={id} appId={APPID} />
         </div>
       </div>
     </div>

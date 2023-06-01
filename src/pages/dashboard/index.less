@@ -3,7 +3,7 @@
   height: 100vh;
   overflow: hidden;
   &-header {
-    height: 65px;
+    height: 48px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -11,10 +11,15 @@
     padding-left: 14px;
     padding-right: 20px;
     border-bottom: 1px solid #f2f2f2;
+    .ant-alert-action{
+      span{
+        font-size: 12px;
+      }
+    }
     &-title {
       width: 200px;
       font-weight: 600;
-      font-size: 16px;
+      font-size: 14px;
       display: flex;
       align-items: center;
       color: var(--antd-wave-shadow-color);
@@ -42,6 +47,18 @@
     }
     &-marquee {
       width: calc(100vw - 340px);
+      height: 34px;
+      display: flex;
+      align-items: center;
+      .anticon{
+        font-size: 18px;
+      }
+      .ant-alert-info{
+        height: 34px !important;
+      }
+      .marquee{
+        font-size: 12px;
+      }
     }
     &-tools {
       display: flex;
@@ -67,7 +84,7 @@
     }
   }
   &-main {
-    height: calc(100% - 65px);
+    height: calc(100% - 48px);
     width: 100%;
     display: flex;
     position: relative;
@@ -154,7 +171,7 @@
       background-color: #eee;
       .form-designer-playground,
       .table-designer-playground {
-        height: calc(100vh - 65px);
+        height: 100%;
       }
       .ant-empty {
         display: flex;
