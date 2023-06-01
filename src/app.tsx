@@ -5,7 +5,7 @@ import { runApp, config } from 'ice';
 import { notification } from 'antd';
 import NoAuthority from '@/pages/403';
 import ErrorBoundary from '@/pages/error-boundary';
-import { getUrlSearchParams } from 'react-core-form-tools';
+import { getAppId } from './util';
 
 export const APPID = 10; // 具体的应用ID
 
@@ -23,9 +23,8 @@ const appConfig: any = {
     interceptors: {
       request: {
         onConfig: (requestConfig) => {
-          const { appId }: any = getUrlSearchParams(location.hash); // 支持传入实现单点登录
           requestConfig.headers = {
-            appId: appId || APPID,
+            appId: getAppId() || APPID,
             appkey: 'TttxBH3CxRumOqHyJV34WbUt00B3CZKwP',
           };
           return requestConfig;

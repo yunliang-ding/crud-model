@@ -2,6 +2,7 @@
 import { createFromIconfontCN } from '@ant-design/icons';
 import { notification } from 'antd';
 import html2canvas from 'html2canvas';
+import { getUrlSearchParams } from 'react-core-form-tools';
 
 /**
  * iconUrl
@@ -19,7 +20,7 @@ export const Icon = createFromIconfontCN({
  * @param element
  * @param filename
  */
- export const copyImg = async (element) => {
+export const copyImg = async (element) => {
   return new Promise((res) => {
     html2canvas(element, {
       useCORS: true,
@@ -27,31 +28,37 @@ export const Icon = createFromIconfontCN({
       canvas.toBlob(async (blob) => {
         // 将blob对象放入剪切板item中
         const type: any = blob?.type;
-        if(navigator.clipboard){
+        if (navigator.clipboard) {
           await navigator.clipboard
-          // eslint-disable-next-line @iceworks/best-practices/recommend-polyfill
-          .write([new ClipboardItem({ [type]: blob } as any)])
-          .then(
-            () => {
-              res(true);
-              notification.success({
-                message: '提示',
-                description: '已保存到粘贴板',
-              });
-            },
-            () => {
-              res(true);
-              notification.warning({
-                message: '提示',
-                description: '保存截图失败',
-              });
-            },
-          );
+            // eslint-disable-next-line @iceworks/best-practices/recommend-polyfill
+            .write([new ClipboardItem({ [type]: blob } as any)])
+            .then(
+              () => {
+                res(true);
+                notification.success({
+                  message: '提示',
+                  description: '已保存到粘贴板',
+                });
+              },
+              () => {
+                res(true);
+                notification.warning({
+                  message: '提示',
+                  description: '保存截图失败',
+                });
+              },
+            );
         } else {
-          alert('请在安全域名下使用')
+          alert('请在安全域名下使用');
           res(true);
         }
       }, 'image/png');
     });
   });
+};
+
+export const getAppId = () => {
+  // 支持传入实现单点登录
+  const { appId }: any = getUrlSearchParams(location.hash);
+  return appId;
 };

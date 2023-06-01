@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Button, CardForm, CreateDrawer, CodeEditor, babelParse } from 'react-core-form';
 import { message, Space, Input } from 'antd';
 import { openRequestConfigDrawer } from '../request-config';
-import { copyImg } from '@/util';
+import { copyImg, getAppId } from '@/util';
 
 const exportDrawer = CreateDrawer({
   width: 800,
@@ -138,7 +138,7 @@ export default ({ formDesignerRef, schemaEntity, saveOrUpdate }) => {
           spin
           onClick={async () => {
             await saveOrUpdate(false);
-            window.open(`#/designer/preview?id=${schemaEntity.id}`);
+            window.open(`#/designer/preview?id=${schemaEntity.id}&appId=${getAppId()}`);
           }}
         >
           预览
