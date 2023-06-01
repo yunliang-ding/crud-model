@@ -6,7 +6,7 @@ import { notification } from 'antd';
 import NoAuthority from '@/pages/403';
 import ErrorBoundary from '@/pages/error-boundary';
 
-const APPID = 1; // 具体的应用ID
+const APPID = 10; // 具体的应用ID
 
 const appConfig: any = {
   request: {
@@ -44,7 +44,7 @@ const appConfig: any = {
           } = response;
           if (code === 40005) {
             // 登录信息失效，之后重新登录
-            location.href = `http://121.4.49.147:8360/unification/login?redirect=${location.href}&appId=${APPID}`;
+            location.href = `http://121.4.49.147:8360/unification/login?redirect=${location.href}&appId=${APPID}&auth=demo`;
             return response;
           }
           if (code === 200) {
