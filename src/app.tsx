@@ -44,7 +44,7 @@ const appConfig: any = {
           } = response;
           if (code === 40005) {
             // 登录信息失效，之后重新登录
-            location.href = `http://121.4.49.147:8360/unification/login?redirect=${location.href}&appId=${APPID}&auth=demo`;
+            location.href = `http://121.4.49.147:8360/unification/login?redirect=${location.href}&appId=${APPID}`;
             return response;
           }
           if (code === 200) {
