@@ -1,7 +1,7 @@
 import { getUrlSearchParams } from 'react-core-form-tools';
 import { CrudModelRender } from 'react-core-form-designer';
-import './index.less';
 import { APPID } from '@/app';
+import './index.less';
 
 export default () => {
   const { id, appId }: any = getUrlSearchParams(location.hash);
