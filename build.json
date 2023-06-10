@@ -44,9 +44,7 @@
             "https://g.alicdn.com/code/lib/prettier/2.0.3/standalone.min.js",
             "https://g.alicdn.com/code/lib/prettier/2.0.3/parser-typescript.min.js",
             "https://g.alicdn.com/code/lib/react/17.0.2/umd/react.development.min.js",
-            "https://g.alicdn.com/code/lib/react-dom/17.0.2/umd/react-dom.development.min.js",
-            "https://g.alicdn.com/code/lib/monaco-editor/0.36.0/min/vs/loader.min.js",
-            "https://g.alicdn.com/code/lib/monaco-editor/0.36.0/min/vs/editor/editor.main.min.css"
+            "https://g.alicdn.com/code/lib/react-dom/17.0.2/umd/react-dom.development.min.js"
           ],
           "build": [
             "https://g.alicdn.com/code/lib/babel-standalone/7.21.2/babel.min.js",
@@ -54,9 +52,7 @@
             "https://g.alicdn.com/code/lib/prettier/2.0.3/standalone.min.js",
             "https://g.alicdn.com/code/lib/prettier/2.0.3/parser-typescript.min.js",
             "https://g.alicdn.com/code/lib/react/17.0.2/umd/react.development.min.js",
-            "https://g.alicdn.com/code/lib/react-dom/17.0.2/umd/react-dom.development.min.js",
-            "https://g.alicdn.com/code/lib/monaco-editor/0.36.0/min/vs/loader.min.js",
-            "https://g.alicdn.com/code/lib/monaco-editor/0.36.0/min/vs/editor/editor.main.min.css"
+            "https://g.alicdn.com/code/lib/react-dom/17.0.2/umd/react-dom.development.min.js"
           ]
         }
       }
