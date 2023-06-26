@@ -5,9 +5,8 @@ import { runApp, config } from 'ice';
 import { notification } from 'antd';
 import NoAuthority from '@/pages/403';
 import ErrorBoundary from '@/pages/error-boundary';
-import { getAppId } from './util';
 
-export const APPID = 10; // 具体的应用ID
+export const APPID = 1; // 具体的应用ID
 
 const appConfig: any = {
   request: {
@@ -24,8 +23,7 @@ const appConfig: any = {
       request: {
         onConfig: (requestConfig) => {
           requestConfig.headers = {
-            appId: getAppId() || APPID,
-            appkey: 'TttxBH3CxRumOqHyJV34WbUt00B3CZKwP',
+            appId: APPID,
           };
           return requestConfig;
         },

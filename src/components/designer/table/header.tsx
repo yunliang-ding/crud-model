@@ -3,6 +3,7 @@ import { Button, CreateDrawer, CodeEditor } from 'react-core-form';
 import { message, Space, Input } from 'antd';
 import { openRequestConfigDrawer } from '../request-config';
 import './index.less';
+import { APPID } from '@/app';
 
 const exportDrawer = CreateDrawer({
   width: 800,
@@ -104,7 +105,7 @@ export default ({ tableDesignerRef, schemaEntity, saveOrUpdate }) => {
           spin
           onClick={async () => {
             await saveOrUpdate(false);
-            window.open(`#/designer/preview?id=${schemaEntity.id}`);
+            window.open(`#/designer/preview?id=${schemaEntity.id}&appId=${APPID}`);
           }}
         >
           预览

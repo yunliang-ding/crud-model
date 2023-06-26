@@ -2,7 +2,6 @@
 import { createFromIconfontCN } from '@ant-design/icons';
 import { notification } from 'antd';
 import html2canvas from 'html2canvas';
-import { getUrlSearchParams } from 'react-core-form-tools';
 
 /**
  * iconUrl
@@ -55,10 +54,4 @@ export const copyImg = async (element) => {
       }, 'image/png');
     });
   });
-};
-
-export const getAppId = () => {
-  // 支持传入实现单点登录
-  const { appId }: any = getUrlSearchParams(location.hash);
-  return appId;
 };

@@ -6,8 +6,6 @@ import { update } from '@/pages/dashboard/services';
 
 export const defaultRequestConfig = {
   baseURL: 'http://121.4.49.147:8361',
-  tokenKey: 'appkey',
-  tokenValue: 'TttxBH3CxRumOqHyJV34WbUt00B3CZKwP',
   code: encrypt(`import request from 'request';
 
 export const getList = (params) => {
@@ -73,24 +71,11 @@ const requestConfigDrawer = (schemaEntity) =>
         required: true,
       },
       {
-        type: 'Input',
-        label: '令牌 key',
-        name: 'tokenKey',
-      },
-      {
-        type: 'TextArea',
-        label: '令牌 value',
-        name: 'tokenValue',
-        props: {
-          maxCount: 500,
-        },
-      },
-      {
         type: ({ value, onChange }) => {
           return (
             <CodeEditor
               style={{
-                height: 'calc(100vh - 370px)',
+                height: 'calc(100vh - 260px)',
                 width: '100%',
               }}
               mode="function"
