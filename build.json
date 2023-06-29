@@ -4,15 +4,6 @@
     "react": "window.React",
     "react-dom": "window.ReactDOM"
   },
-  "proxy": {
-    "/proxy": {
-      "enable": true,
-      "target": "http://121.4.49.147:8360/",
-      "pathRewrite": {
-        "^/proxy": ""
-      }
-    }
-  },
   "router": {
     "ignorePaths": ["schema", "component", "components"]
   },

@@ -1,11 +1,11 @@
 export default {
   local: {
-    baseURL: location.origin,
+    baseURL: 'http://121.4.49.147:8360',
   },
   daily: {
-    baseURL: location.origin,
+    baseURL: 'http://121.4.49.147:8360',
   },
   prod: {
-    baseURL: location.origin,
+    baseURL: 'http://121.4.49.147:8360',
   },
 };
