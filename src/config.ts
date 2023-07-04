@@ -1,11 +1,11 @@
 export default {
   local: {
-    baseURL: 'http://121.4.49.147:8360',
+    baseURL: 'http://server.yunliang.cloud',
   },
   daily: {
-    baseURL: 'http://121.4.49.147:8360',
+    baseURL: 'http://server.yunliang.cloud',
   },
   prod: {
-    baseURL: 'http://121.4.49.147:8360',
+    baseURL: 'http://server.yunliang.cloud',
   },
 };

@@ -5,7 +5,7 @@ import { decode, encode } from 'react-core-form-tools';
 import { update } from '@/pages/dashboard/services';
 
 export const defaultRequestConfig = {
-  baseURL: 'http://121.4.49.147:8361',
+  baseURL: 'http://online.yunliang.cloud',
   code: encrypt(`import request from 'request';
 
 export const getList = (params) => {
