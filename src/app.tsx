@@ -43,7 +43,7 @@ const appConfig: any = {
           } = response;
           if (code === 40005) {
             // 登录信息失效，之后重新登录
-            location.href = `http://web.yunliang.cloud/unification-login?redirect=${location.href}&appId=${APPID}`;
+            location.href = `http://server.yunliang.cloud/website/unification-login?redirect=${location.href}&appId=${APPID}`;
             return response;
           }
           if (code === 200) {
