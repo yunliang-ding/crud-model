@@ -6,7 +6,7 @@ import { notification } from 'antd';
 import NoAuthority from '@/pages/403';
 import ErrorBoundary from '@/pages/error-boundary';
 
-export const APPID = 1; // 具体的应用ID
+export const APPID = 2; // 具体的应用ID
 
 const appConfig: any = {
   request: {
@@ -43,7 +43,7 @@ const appConfig: any = {
           } = response;
           if (code === 40005) {
             // 登录信息失效，之后重新登录
-            location.href = `http://server.yunliang.cloud/website/unification-login?redirect=${location.href}&appId=${APPID}`;
+            location.href = `http://ulp.yunliang.cloud?redirect=${location.href}&appId=${APPID}`;
             return response;
           }
           if (code === 200) {
