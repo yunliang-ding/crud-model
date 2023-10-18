@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
-import { Button, CardForm, CreateDrawer, CodeEditor, babelParse } from 'react-core-form';
+import { Button, CardForm, CreateDrawer, CodeEditor } from 'react-core-form';
 import { message, Space, Input } from 'antd';
 import { openRequestConfigDrawer } from '../request-config';
 import { copyImg } from '@/util';
 import { APPID } from '@/app';
+import { babelParse } from 'react-core-form-tools';
 
 const exportDrawer = CreateDrawer({
   width: 800,

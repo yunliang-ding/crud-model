@@ -1,11 +1,11 @@
 export default {
   local: {
-    baseURL: 'http://dev-ops.yunliang.cloud',
+    baseURL: 'http://center.yunliang.cloud',
   },
   daily: {
-    baseURL: 'http://dev-ops.yunliang.cloud',
+    baseURL: 'http://center.yunliang.cloud',
   },
   prod: {
-    baseURL: 'http://dev-ops.yunliang.cloud',
+    baseURL: 'http://center.yunliang.cloud',
   },
 };

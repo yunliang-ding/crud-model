@@ -5,5 +5,5 @@ export const outLogin = () => {
 };
 
 export const userInfo = () => {
-  return request.post('/user/info');
+  return request.post('/user/userinfo');
 };
