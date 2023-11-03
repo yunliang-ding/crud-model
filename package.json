@@ -3,8 +3,9 @@
   "version": "0.0.1",
   "description": "crud模型搭建",
   "dependencies": {
-    "react-core-form": "1.0.27",
+    "react-core-form": "1.0.29",
     "react-core-form-tools": "0.0.7",
+    "react-core-form-code-editor": "0.0.1",
     "react-core-form-designer": "0.0.27",
     "@ant-design/icons": "^4.0.2",
     "@ant-design/pro-card": "1.16.2",

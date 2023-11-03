@@ -1,8 +1,11 @@
+/* eslint-disable require-atomic-updates */
+/* eslint-disable no-template-curly-in-string */
 import axios from 'axios';
 import { notification } from 'antd';
-import { CreateDrawer, CodeEditor, encrypt } from 'react-core-form';
+import { CreateDrawer } from 'react-core-form';
 import { decode, encode } from 'react-core-form-tools';
 import { update } from '@/pages/dashboard/services';
+import { CodeEditor, encrypt } from 'react-core-form-code-editor';
 
 export const defaultRequestConfig = {
   baseURL: 'http://api-online.yunliang.cloud',
@@ -97,7 +100,7 @@ const requestConfigDrawer = (schemaEntity) =>
       const services = encode(JSON.stringify(values));
       const { code } = await update({
         ...schemaEntity,
-        services
+        services,
       });
       if (code === 200) {
         schemaEntity.services = services;

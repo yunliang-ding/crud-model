@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
-import { Button, CreateDrawer, CodeEditor } from 'react-core-form';
+import { Button, CreateDrawer } from 'react-core-form';
 import { message, Space, Input } from 'antd';
 import { openRequestConfigDrawer } from '../request-config';
-import './index.less';
 import { APPID } from '@/app';
+import { CodeEditor } from 'react-core-form-code-editor';
+import './index.less';
 
 const exportDrawer = CreateDrawer({
   width: 800,
