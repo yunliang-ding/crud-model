@@ -1,0 +1,1 @@
+pm2 startOrReload app/pm2.json;

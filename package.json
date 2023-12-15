@@ -9,6 +9,7 @@
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "@arco-design/web-react": "2.57.0",
     "react-core-form": "2.1.1",
     "react-core-form-tools": "1.0.1",
     "react-core-form-code-editor": "1.0.1",
