@@ -15,7 +15,7 @@ lib/
 .DS_Store
 *.swp
 *.dia~
-.ice
+.lyr
 
 npm-debug.log*
 yarn-debug.log*
