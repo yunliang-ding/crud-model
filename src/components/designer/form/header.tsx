@@ -3,7 +3,6 @@ import { Button, CardForm, CreateDrawer } from 'react-core-form';
 import { Message, Space, Input } from '@arco-design/web-react';
 import { openRequestConfigDrawer } from '../request-config';
 import { copyImg } from '@/util';
-import { APPID } from '@/app';
 import { babelParse } from 'react-core-form-tools';
 import { CodeEditor } from 'react-core-form-code-editor';
 import { IconEdit } from '@arco-design/web-react/icon';
@@ -96,7 +95,7 @@ export default ({ formDesignerRef, schemaEntity, saveOrUpdate }) => {
         <Button
           type="primary"
           onClick={() => {
-            if (formDesignerRef.current.getSchema()?.length > 0) {
+            if (formDesignerRef.current.getStore().schema.length > 0) {
               exportDrawer.open({
                 initialValues: {
                   code: formDesignerRef.current.getStandardSchema(),
@@ -113,7 +112,7 @@ export default ({ formDesignerRef, schemaEntity, saveOrUpdate }) => {
           type="primary"
           spin
           onClick={async () => {
-            if (formDesignerRef.current.getSchema()?.length > 0) {
+            if (formDesignerRef.current.getStore().schema.length > 0) {
               await new Promise((res) => {
                 setTimeout(res, 600);
               });
@@ -134,7 +133,7 @@ export default ({ formDesignerRef, schemaEntity, saveOrUpdate }) => {
           onClick={async () => {
             await saveOrUpdate(false);
             window.open(
-              `#/designer/preview?id=${schemaEntity.id}&appId=${APPID}`,
+              `#/preview?id=${schemaEntity.id}`,
             );
           }}
         >

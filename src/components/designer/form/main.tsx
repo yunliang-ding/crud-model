@@ -10,15 +10,10 @@ export default ({ schemaEntity }) => {
   /** 更新模型 */
   const saveOrUpdate = async (flag = true) => {
     const store = formDesignerRef.current.getStore();
-    const data = {
-      schema: store.schema,
-      formProps: store.formProps,
-      selectedSchema: store.selectedSchema,
-    };
     const { code } = await update({
       ...schemaEntity,
-      schema: encode(JSON.stringify(data)),
-      size: Number(new Blob([JSON.stringify(data)]).size / 1024),
+      schema: encode(JSON.stringify(store)),
+      size: Number(new Blob([JSON.stringify(store)]).size / 1024),
     });
     if (code === 200 && flag) {
       Notification.success({
@@ -31,7 +26,7 @@ export default ({ schemaEntity }) => {
   useEffect(() => {
     if (schemaEntity.schema) {
       const newStore = JSON.parse(decode(schemaEntity.schema));
-      formDesignerRef.current.update(newStore);
+      formDesignerRef.current.setStore(newStore);
     }
   }, []);
   return (

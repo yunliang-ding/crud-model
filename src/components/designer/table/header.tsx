@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Button, CreateDrawer } from 'react-core-form';
 import { Message, Space, Input } from '@arco-design/web-react';
 import { openRequestConfigDrawer } from '../request-config';
-import { APPID } from '@/app';
 import { CodeEditor } from 'react-core-form-code-editor';
 import { IconEdit } from '@arco-design/web-react/icon';
 
@@ -85,7 +84,7 @@ export default ({ tableDesignerRef, schemaEntity, saveOrUpdate }) => {
         <Button
           type="primary"
           onClick={() => {
-            if (tableDesignerRef.current.columns?.length > 0) {
+            if (tableDesignerRef.current.getStore().columns.length) {
               exportDrawer.open({
                 initialValues: {
                   code: tableDesignerRef.current.getStandardSchema(),
@@ -103,7 +102,7 @@ export default ({ tableDesignerRef, schemaEntity, saveOrUpdate }) => {
           spin
           onClick={async () => {
             await saveOrUpdate(false);
-            window.open(`#/designer/preview?id=${schemaEntity.id}&appId=${APPID}`);
+            window.open(`#/preview?id=${schemaEntity.id}`);
           }}
         >
           预览
