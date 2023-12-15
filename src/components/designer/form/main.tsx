@@ -33,11 +33,11 @@ export default ({ schemaEntity }) => {
       const formProps = { ...obj };
       delete formProps.schema;
       delete formProps.selectSchema;
-      if (!isEmpty(formProps)) {
-        formDesignerRef.current.setFormProps(formProps);
-      }
-      formDesignerRef.current.setSchema(obj.schema || []);
-      formDesignerRef.current.setSelectSchema(obj.selectSchema || {});
+      // if (!isEmpty(formProps)) {
+      //   formDesignerRef.current.setFormProps(formProps);
+      // }
+      // formDesignerRef.current.setSchema(obj.schema || []);
+      // formDesignerRef.current.setSelectSchema(obj.selectSchema || {});
     }
   }, []);
   return (

@@ -1,5 +1,5 @@
 .form-designer-playground {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background-color: #eee;
   &-header {
@@ -12,23 +12,6 @@
     background-color: #fff;
     position: relative;
     margin-bottom: 12px;
-    &-project-info {
-      margin-left: 20px;
-      color: #111;
-      span {
-        font-size: 12px;
-        font-weight: 700;
-      }
-      a, input {
-        font-size: 12px;
-        font-weight: 700;
-      }
-    }
-    div {
-      font-size: 13px;
-      font-weight: 600;
-      color: #111;
-    }
     .app-form-render-result {
       z-index: -1;
       position: absolute;
@@ -45,12 +28,12 @@
     padding: 0 10px;
     display: flex;
     .widgets-panel {
-      width: 280px;
+      width: 240px;
       height: 100%;
       overflow: auto;
     }
     .form-canvas {
-      width: calc(100% - 680px);
+      width: calc(100% - 440px);
       height: 100%;
       border: 1px dashed #ccc;
       .ant-card-body {

@@ -7,9 +7,9 @@ import NoPermissions from '@/pages/403';
 import uiStore from '@/store/ui';
 import userStore from '@/store/user';
 
-export default (props: any) => {
-  if (props.location.pathname === '/designer/preview') {
-    return <DesignerPreview {...props} />;
+export default () => {
+  if (location.hash === '#/designer/preview') {
+    return <DesignerPreview />;
   }
   const { fetchUserInfo } = userStore.use();
   const { status } = uiStore.use();
@@ -23,5 +23,5 @@ export default (props: any) => {
   } else if (status === 'noPermissions') {
     return <NoPermissions />;
   }
-  return <Layout {...props} />;
+  return <Layout />;
 };

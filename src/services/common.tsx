@@ -1,9 +1,9 @@
 import { request } from 'lyr';
 
-export const outLogin = () => {
+export const outLogin = (): Promise<any> => {
   return request.post('/user/logout');
 };
 
-export const userInfo = () => {
-  return request.post('/user/userinfo');
+export const userInfo = (): Promise<any> => {
+  return request.post('/user/info');
 };

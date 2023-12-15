@@ -6,6 +6,7 @@ import { copyImg } from '@/util';
 import { APPID } from '@/app';
 import { babelParse } from 'react-core-form-tools';
 import { CodeEditor } from 'react-core-form-code-editor';
+import { IconEdit } from '@arco-design/web-react/icon';
 
 const exportDrawer = CreateDrawer({
   width: 800,
@@ -19,12 +20,7 @@ const exportDrawer = CreateDrawer({
     },
   },
   render({ value }) {
-    return (
-      <CodeEditor
-        value={value.code}
-        minimapEnabled={false}
-      />
-    );
+    return <CodeEditor value={value.code} minimapEnabled={false} />;
   },
 });
 
@@ -50,7 +46,7 @@ export default ({ formDesignerRef, schemaEntity, saveOrUpdate }) => {
         />
       </div>
       <div style={{ display: 'flex', alignItems: 'center' }}>
-        <div>表单设计器</div>
+        <div style={{ marginRight: 12 }}>表单设计器</div>
         <Space className="form-designer-playground-header-project-info">
           {edit ? (
             <Input
@@ -66,13 +62,13 @@ export default ({ formDesignerRef, schemaEntity, saveOrUpdate }) => {
             />
           ) : (
             <>
-              <span>{schemaEntity.name}</span>
+              <span style={{ marginRight: 10 }}>{schemaEntity.name}</span>
               <a
                 onClick={() => {
                   setEdit(true);
                 }}
               >
-                <i className="iconfont spicon-bianji" />
+                <IconEdit />
               </a>
             </>
           )}
@@ -89,7 +85,6 @@ export default ({ formDesignerRef, schemaEntity, saveOrUpdate }) => {
           保存
         </Button>
         <Button
-          ghost
           type="primary"
           spin
           onClick={() => {
@@ -100,9 +95,8 @@ export default ({ formDesignerRef, schemaEntity, saveOrUpdate }) => {
         </Button>
         <Button
           type="primary"
-          ghost
           onClick={() => {
-            if (formDesignerRef.current.schema?.length > 0) {
+            if (formDesignerRef.current.getSchema()?.length > 0) {
               exportDrawer.open({
                 initialValues: {
                   code: formDesignerRef.current.getStandardSchema(),
@@ -117,10 +111,9 @@ export default ({ formDesignerRef, schemaEntity, saveOrUpdate }) => {
         </Button>
         <Button
           type="primary"
-          ghost
           spin
           onClick={async () => {
-            if (formDesignerRef.current.schema?.length > 0) {
+            if (formDesignerRef.current.getSchema()?.length > 0) {
               await new Promise((res) => {
                 setTimeout(res, 600);
               });
@@ -136,12 +129,13 @@ export default ({ formDesignerRef, schemaEntity, saveOrUpdate }) => {
           一键截图
         </Button>
         <Button
-          ghost
           type="primary"
           spin
           onClick={async () => {
             await saveOrUpdate(false);
-            window.open(`#/designer/preview?id=${schemaEntity.id}&appId=${APPID}`);
+            window.open(
+              `#/designer/preview?id=${schemaEntity.id}&appId=${APPID}`,
+            );
           }}
         >
           预览

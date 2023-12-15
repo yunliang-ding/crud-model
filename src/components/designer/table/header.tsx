@@ -4,7 +4,7 @@ import { Message, Space, Input } from '@arco-design/web-react';
 import { openRequestConfigDrawer } from '../request-config';
 import { APPID } from '@/app';
 import { CodeEditor } from 'react-core-form-code-editor';
-import './index.less';
+import { IconEdit } from '@arco-design/web-react/icon';
 
 const exportDrawer = CreateDrawer({
   width: 800,
@@ -41,7 +41,7 @@ export default ({ tableDesignerRef, schemaEntity, saveOrUpdate }) => {
   return (
     <div className="table-designer-playground-header">
       <div style={{ display: 'flex', alignItems: 'center' }}>
-        <div>表格设计器</div>
+        <div style={{ marginRight: 12 }}>表格设计器</div>
         <Space className="table-designer-playground-header-project-info">
           {edit ? (
             <Input
@@ -57,13 +57,13 @@ export default ({ tableDesignerRef, schemaEntity, saveOrUpdate }) => {
             />
           ) : (
             <>
-              <span>{schemaEntity.name}</span>
+              <span style={{ marginRight: 10 }}>{schemaEntity.name}</span>
               <a
                 onClick={() => {
                   setEdit(true);
                 }}
               >
-                <i className="iconfont spicon-bianji" />
+                <IconEdit />
               </a>
             </>
           )}
@@ -74,7 +74,6 @@ export default ({ tableDesignerRef, schemaEntity, saveOrUpdate }) => {
           保存
         </Button>
         <Button
-          ghost
           type="primary"
           spin
           onClick={() => {
@@ -85,7 +84,6 @@ export default ({ tableDesignerRef, schemaEntity, saveOrUpdate }) => {
         </Button>
         <Button
           type="primary"
-          ghost
           onClick={() => {
             if (tableDesignerRef.current.columns?.length > 0) {
               exportDrawer.open({
@@ -101,7 +99,6 @@ export default ({ tableDesignerRef, schemaEntity, saveOrUpdate }) => {
           查看模型
         </Button>
         <Button
-          ghost
           type="primary"
           spin
           onClick={async () => {

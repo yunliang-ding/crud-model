@@ -36,50 +36,23 @@
         background-color: #eee;
         width: 30px;
         height: 30px;
-        padding: 10px;
         border-radius: 50%;
-        transition: 0.3;
+        transition: 0.3s;
         &:hover {
           background-color: #ddd;
-          transition: 0.3;
+          transition: 0.3s;
         }
-      }
-    }
-    &-marquee {
-      width: calc(100vw - 340px);
-      height: 34px;
-      display: flex;
-      align-items: center;
-      .anticon{
-        font-size: 18px;
-      }
-      .ant-alert-info{
-        height: 34px !important;
-      }
-      .marquee{
-        font-size: 12px;
       }
     }
     &-tools {
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      width: 150px;
+      gap: 16px;
+      width: calc(100% - 200px);
       &-item {
         font-size: 12px;
-        color: #111;
         cursor: pointer;
-        .codicon {
-          font-size: 16px;
-          margin-right: 10px;
-          color: rgb(var(--primary-6));
-        }
-        img {
-          width: 30px;
-          height: 30px;
-          border-radius: 50%;
-          margin-left: 10px;
-        }
       }
     }
   }
@@ -88,80 +61,6 @@
     width: 100%;
     display: flex;
     position: relative;
-    &-sider {
-      width: 200px;
-      height: 100%;
-      background-color: #f8f8f8;
-      transition: 0.3s;
-      .ant-spin-nested-loading {
-        height: 100%;
-        .ant-spin-container {
-          height: 100%;
-          .ant-empty {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 50%;
-          }
-        }
-      }
-      &-menu,
-      &-menu-active {
-        height: 30px;
-        font-size: 12px;
-        width: 100%;
-        padding: 0 20px;
-        display: flex;
-        font-weight: bold;
-        align-items: center;
-        cursor: pointer;
-        transition: 0.5s;
-        color: #333;
-        white-space: nowrap;
-        .anticon {
-          font-size: 16px;
-          margin-right: 8px;
-          font-weight: 600;
-        }
-        &:hover {
-          background-color: #eee;
-          transition: 0.5s;
-        }
-      }
-      &-menu-active {
-        background-color: #eee;
-        color: rgb(var(--primary-6));
-      }
-    }
-    &-expand,
-    &-not-expand {
-      position: absolute;
-      bottom: 50px;
-      left: 186px;
-      background-color: #fff;
-      height: 26px;
-      width: 26px;
-      padding: 8px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      z-index: 9;
-      box-shadow: -1px 1px 12px 0px #dddbdb;
-      .iconfont {
-        font-size: 12px;
-        transition: 0.3s;
-        font-weight: 700;
-      }
-    }
-    &-expand {
-      .iconfont {
-        transform: rotate(180deg);
-        transition: 0.3s;
-      }
-    }
     &-content {
       height: 100%;
       transition: 0.3s;
@@ -193,11 +92,5 @@
       width: calc(100% - 20px);
       transition: 0.3s;
     }
-  }
-}
-.sider-dropdown {
-  .ant-dropdown-menu-item,
-  .ant-dropdown-menu-submenu-title {
-    padding: 0 !important;
   }
 }

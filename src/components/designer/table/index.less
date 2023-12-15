@@ -1,5 +1,5 @@
 .table-designer-playground {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background-color: #eee;
   &-header {
@@ -12,23 +12,6 @@
     background-color: #fff;
     position: relative;
     margin-bottom: 12px;
-    &-project-info {
-      margin-left: 20px;
-      color: #111;
-      span {
-        font-size: 12px;
-        font-weight: 700;
-      }
-      a, input {
-        font-size: 12px;
-        font-weight: 700;
-      }
-    }
-    div {
-      font-size: 13px;
-      font-weight: 600;
-      color: #111;
-    }
   }
   &-body {
     height: calc(100% - 70px);
@@ -38,17 +21,22 @@
     padding: 0 10px;
     display: flex;
     .widgets-panel {
-      width: 280px;
+      width: 240px;
       height: 100%;
       overflow: auto;
     }
+    .table-canvas-table,
+    .table-canvas-table-selected {
+      margin: 0 !important;
+      background-color: #fff;
+    }
     .table-canvas {
-      width: calc(100% - 680px);
+      width: calc(100% - 440px);
       height: 100%;
-      .core-form-table{
+      .core-form-table {
         height: 100%;
       }
-      .ant-card-head {
+      .arco-card-head {
         height: 44px;
         display: flex;
         padding-right: 14px;

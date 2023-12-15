@@ -7,16 +7,11 @@ body {
 }
 
 #nprogress .bar {
-  background: rgb(var(--primary-6));
+  background: rgb(var(--primary-6)) !important;
 }
 
 #nprogress .peg {
-  box-shadow: 0 0 10px rgb(var(--primary-6)), 0 0 5px rgb(var(--primary-6));
-}
-
-#nprogress .spinner-icon {
-  border-top-color: rgb(var(--primary-6));
-  border-left-color: rgb(var(--primary-6));
+  box-shadow: 0 0 10px rgb(var(--primary-6)), 0 0 5px rgb(var(--primary-6)) !important;
 }
 
 @-webkit-keyframes nprogress-spinner {
@@ -55,9 +50,13 @@ body {
   h2 {
     font-size: 18px !important;
   }
+  h4{
+    margin-top: 0;
+  }
   a {
     color: rgb(var(--primary-6));
     text-decoration: none;
+    cursor: pointer;
   }
   .arco-page-header-content {
     overflow: auto;
