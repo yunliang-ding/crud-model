@@ -1,17 +1,16 @@
 /* eslint-disable no-console */
-import { createFromIconfontCN } from '@ant-design/icons';
-import { notification } from 'antd';
 import html2canvas from 'html2canvas';
-
+import { Icon as ArcoIcon } from '@arco-design/web-react';
+import { Notification } from '@arco-design/web-react';
 /**
  * iconUrl
  */
-export const iconUrl = '//at.alicdn.com/t/c/font_3945872_hr5g04sst09.js';
+export const iconUrl = '//at.alicdn.com/t/c/font_3520199_pheco7nb3xf.js';
 /**
  * icon
  */
-export const Icon = createFromIconfontCN({
-  scriptUrl: iconUrl,
+export const Icon = ArcoIcon.addFromIconFontCn({
+  src: iconUrl,
 });
 
 /**
@@ -34,14 +33,14 @@ export const copyImg = async (element) => {
             .then(
               () => {
                 res(true);
-                notification.success({
+                Notification.success({
                   message: '提示',
                   description: '已保存到粘贴板',
                 });
               },
               () => {
                 res(true);
-                notification.warning({
+                Notification.warning({
                   message: '提示',
                   description: '保存截图失败',
                 });

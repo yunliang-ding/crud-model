@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { decode, encode, isEmpty } from 'react-core-form-tools';
-import { message, notification } from 'antd';
+import { Message, Notification } from '@arco-design/web-react';
 import { TableDesigner } from 'react-core-form-designer';
 import { getList, update } from '@/pages/dashboard/services';
 import Header from './header';
@@ -21,7 +21,7 @@ export default ({ schemaEntity }) => {
       size: Number(new Blob([JSON.stringify(data)]).size / 1024),
     });
     if (code === 200 && flag) {
-      notification.success({
+      Notification.success({
         message: '提示',
         description: '保存成功',
       });
@@ -44,7 +44,7 @@ export default ({ schemaEntity }) => {
           <TableDesigner.RegisterWidgets />
           <TableDesigner.TableCanvas
             onCtrlS={async () => {
-              const hide = message.loading('保存中');
+              const hide = Message.loading('保存中');
               await saveOrUpdate();
               hide();
             }}

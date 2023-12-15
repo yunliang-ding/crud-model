@@ -1,20 +1,20 @@
 /* eslint-disable no-nested-ternary */
 import { useEffect, useState } from 'react';
 import { CreateModal } from 'react-core-form';
-import { Avatar, Dropdown, Empty, Menu, Spin } from 'antd';
+import { Avatar, Dropdown, Empty, Menu, Spin } from '@arco-design/web-react';
 import Sider from './sider';
 import View from '@/pages/view';
 import formSchema from './form.schema';
 import { outLogin } from '@/services/common';
 import { getList } from './services';
-import store from '@/store';
+import userStore from '@/store/user';
 import AlertNotice from '@/layouts/alert-notice';
 import './index.less';
 
 const prefixCls = 'app-form-designer-dashboard';
 
 export default () => {
-  const [userInfo] = store.useModel('user');
+  const { name } = userStore.use();
   const [data, setData]: any = useState([]);
   const [expand, setExpand] = useState(true);
   const [spin, setSpin] = useState(false);
@@ -72,11 +72,11 @@ export default () => {
           <div className={`${prefixCls}-header-tools-item`}>
             <Avatar
               style={{
-                backgroundColor: 'var(--antd-wave-shadow-color)',
+                backgroundColor: 'var(rgb(--primary-6))',
                 marginRight: 10,
               }}
             >
-              {userInfo.name.substring(0, 1)}
+              {name.substring(0, 1)}
             </Avatar>
             <Dropdown
               overlay={
@@ -94,7 +94,7 @@ export default () => {
                 </Menu>
               }
             >
-              <a>{userInfo.name}</a>
+              <a>{name}</a>
             </Dropdown>
           </div>
         </div>

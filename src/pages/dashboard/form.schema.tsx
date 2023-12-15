@@ -1,4 +1,4 @@
-import { notification } from 'antd';
+import { Notification } from '@arco-design/web-react';
 import { SchemaProps } from 'react-core-form';
 import { encode } from 'react-core-form-tools';
 import { add } from './services';
@@ -22,7 +22,7 @@ export default ({
         schema: initialValues.id ? initialValues.schema : encode('{}'),
       });
       if (code === 200) {
-        notification.success({
+        Notification.success({
           message: '提示',
           description: '创建成功',
         });

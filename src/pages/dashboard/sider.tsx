@@ -1,5 +1,5 @@
 import { Button, CreateModal } from 'react-core-form';
-import { Dropdown, Menu, notification, Empty } from 'antd';
+import { Dropdown, Menu, notification, Empty } from '@arco-design/web-react';
 import formSchema from './form.schema';
 import { remove } from './services';
 import { Icon } from '@/util';
@@ -7,7 +7,6 @@ import { Icon } from '@/util';
 export default ({
   query,
   items,
-  setItems,
   setCurrentMenuId,
   currentMenuId,
   prefixCls,

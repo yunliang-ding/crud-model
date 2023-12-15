@@ -1,4 +1,4 @@
-import { Result } from 'antd';
+import { Result } from '@arco-design/web-react';
 
 export default () => {
   return (

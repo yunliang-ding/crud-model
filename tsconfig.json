@@ -9,7 +9,10 @@
     "jsx": "react-jsx",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "lib": ["es6", "dom"],
+    "lib": [
+      "es6",
+      "dom"
+    ],
     "sourceMap": true,
     "allowJs": true,
     "rootDir": "./",
@@ -20,14 +23,24 @@
     "importHelpers": true,
     "strictNullChecks": true,
     "strict": true,
-    "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
     "skipLibCheck": true,
+    "resolveJsonModule": true,
     "paths": {
-      "@/*": ["./src/*"],
-      "ice": [".ice/index.ts"]
+      "@/*": [
+        "./src/*"
+      ],
+      "lyr": [
+        "./src/.lyr"
+      ],
+      "react": [
+        "./node_modules/@types/react"
+      ]
     }
   },
-  // "include": ["src/*", ".ice"],
-  "exclude": ["node_modules", "build", "public"]
+  "exclude": [
+    "node_modules",
+    "dist",
+    "app"
+  ]
 }

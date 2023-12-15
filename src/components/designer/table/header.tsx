@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Button, CreateDrawer } from 'react-core-form';
-import { message, Space, Input } from 'antd';
+import { Message, Space, Input } from '@arco-design/web-react';
 import { openRequestConfigDrawer } from '../request-config';
 import { APPID } from '@/app';
 import { CodeEditor } from 'react-core-form-code-editor';
@@ -94,7 +94,7 @@ export default ({ tableDesignerRef, schemaEntity, saveOrUpdate }) => {
                 },
               });
             } else {
-              message.info('暂无模型数据.');
+              Message.info('暂无模型数据.');
             }
           }}
         >

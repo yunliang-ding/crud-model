@@ -1,4 +1,4 @@
-import { Skeleton, Space } from 'antd';
+import { Skeleton, Space } from '@arco-design/web-react';
 import './index.less';
 
 export default () => {
@@ -7,7 +7,6 @@ export default () => {
       <div className="form-designer-playground-header">
         <div>
           <Space>
-            <Skeleton.Button active />
             <Skeleton.Input active />
             <Skeleton.Input active />
           </Space>

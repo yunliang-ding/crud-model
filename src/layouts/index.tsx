@@ -4,24 +4,23 @@ import Loading from '@/components/loading';
 import DesignerPreview from '@/components/designer/preview'
 import Error from '@/components/error';
 import NoPermissions from '@/pages/403';
-import store from '@/store';
-import { useAuth } from 'ice';
+import uiStore from '@/store/ui';
+import userStore from '@/store/user';
 
 export default (props: any) => {
   if (props.location.pathname === '/designer/preview') {
     return <DesignerPreview {...props} />;
   }
-  const [, setAuth] = useAuth();
-  const [, userDispatchers] = store.useModel('user');
-  const [uiState] = store.useModel('ui');
+  const { fetchUserInfo } = userStore.use();
+  const { status } = uiStore.use();
   useEffect(() => {
-    userDispatchers.fetchUserInfo(setAuth);
+    fetchUserInfo(uiStore);
   }, []);
-  if (uiState.status === 'loading') {
+  if (status === 'loading') {
     return <Loading />;
-  }else if (uiState.status === 'error') {
+  }else if (status === 'error') {
     return <Error />;
-  } else if (uiState.status === 'noPermissions') {
+  } else if (status === 'noPermissions') {
     return <NoPermissions />;
   }
   return <Layout {...props} />;

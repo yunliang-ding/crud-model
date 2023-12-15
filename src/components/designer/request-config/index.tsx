@@ -1,7 +1,7 @@
 /* eslint-disable require-atomic-updates */
 /* eslint-disable no-template-curly-in-string */
 import axios from 'axios';
-import { notification } from 'antd';
+import { Notification } from '@arco-design/web-react';
 import { CreateDrawer } from 'react-core-form';
 import { decode, encode } from 'react-core-form-tools';
 import { update } from '@/pages/dashboard/services';
@@ -104,7 +104,7 @@ const requestConfigDrawer = (schemaEntity) =>
       });
       if (code === 200) {
         schemaEntity.services = services;
-        notification.success({
+        Notification.success({
           message: '提示',
           description: '保存成功',
         });

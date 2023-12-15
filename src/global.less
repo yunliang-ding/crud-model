@@ -1,78 +1,150 @@
-@import '~antd/dist/antd.less';
+body {
+  padding: 0;
+  margin: 0;
+  div{
+    box-sizing: border-box;
+  }
+}
+
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background: rgb(var(--primary-6));
+
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+}
+
+/* Fancy blur effect */
+#nprogress .peg {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  height: 100%;
+  box-shadow: 0 0 10px rgb(var(--primary-6)), 0 0 5px rgb(var(--primary-6));
+  opacity: 1.0;
+
+  -webkit-transform: rotate(3deg) translate(0px, -4px);
+      -ms-transform: rotate(3deg) translate(0px, -4px);
+          transform: rotate(3deg) translate(0px, -4px);
+}
+
+/* Remove these to get rid of the spinner */
+#nprogress .spinner {
+  display: block;
+  position: fixed;
+  z-index: 1031;
+  top: 15px;
+  right: 15px;
+}
+
+#nprogress .spinner-icon {
+  width: 18px;
+  height: 18px;
+  box-sizing: border-box;
+
+  border: solid 2px transparent;
+  border-top-color: rgb(var(--primary-6));
+  border-left-color: rgb(var(--primary-6));
+  border-radius: 50%;
+
+  -webkit-animation: nprogress-spinner 400ms linear infinite;
+          animation: nprogress-spinner 400ms linear infinite;
+}
+
+.nprogress-custom-parent {
+  overflow: hidden;
+  position: relative;
+}
+
+.nprogress-custom-parent #nprogress .spinner,
+.nprogress-custom-parent #nprogress .bar {
+  position: absolute;
+}
+
+@-webkit-keyframes nprogress-spinner {
+  0%   { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes nprogress-spinner {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+body {
+  div,
+  span,
+  td,
+  th,
+  a,
+  button,
+  p,
+  li,
+  input,
+  textarea,
+  label {
+    font-weight: 500 !important;
+    font-size: 12px !important;
+  }
+  .arco-icon {
+    font-size: 14px !important;
+  }
+  .arco-empty-image .arco-icon {
+    font-size: 48px !important;
+  }
+  .arco-spin-icon .arco-icon {
+    font-size: 20px !important;
+  }
+  h2 {
+    font-size: 18px !important;
+  }
+  a {
+    color: rgb(var(--primary-6));
+    text-decoration: none;
+  }
+  .arco-page-header-content {
+    overflow: auto;
+  }
+}
+
+#root {
+  height: 100vh;
+  width: 100vw;
+}
 
 body {
   -webkit-font-smoothing: antialiased;
+
   button {
     span {
       font-weight: 600;
-      font-size: 12px !important;
     }
   }
+
   label {
     font-weight: 600;
-    font-size: 12px !important;
-  }
-  .ant-table-cell{
-    font-size: 12px !important;
-  }
-}
-.ant-select-selection-item-content {
-  white-space: normal !important;
-}
-.ant-pro-page-container-children-content {
-  margin: 20px;
-}
-.schema-block-quote {
-  margin-bottom: 0;
-}
-.ant-pro-top-nav-header-logo {
-  h1 {
-    font-weight: bold !important;
-  }
-}
-.ant-menu-submenu {
-  .ant-menu-item-only-child {
-    .ant-pro-menu-item {
-      margin-left: 8px !important;
-    }
-  }
-}
-.ant-pro-page-container-children-content {
-  margin: 20px !important;
-}
-.ant-pro-basicLayout-side {
-  .ant-pro-sider-logo {
-    background: #001628;
-  }
-  .ant-pro-global-header-layout-side {
-    background: #001628 !important;
-  }
-  .ant-pro-sider-logo {
-    h1 {
-      color: #fff !important;
-    }
-  }
-  .ant-pro-global-header {
-    .anticon-menu-fold,
-    .anticon-menu-unfold {
-      color: #fff;
-    }
-  }
-}
-.ant-drawer-right {
-  transform: translateX(0) !important;
-}
-.core-form-table {
-  .ant-table-wrapper {
-    border: none !important
-  }
-  .ant-table-pagination-right {
-    border: none !important
   }
 }
 
-.ant-table-cell,
-.ant-pro-menu-item-title,
-.ant-breadcrumb-link {
-  font-weight: 600 !important;
+#root > .arco-result-is-500 {
+  position: relative;
+  top: 100px;
+}
+
+#root > .arco-spin > .arco-spin-icon > .arco-icon-loading {
+  font-size: 40px !important;
+}
+
+.arco-menu-vertical{
+  .arco-icon{
+    margin-right: 0 !important;
+  }
 }

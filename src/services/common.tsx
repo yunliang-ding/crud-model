@@ -1,4 +1,4 @@
-import { request } from 'ice';
+import { request } from 'lyr';
 
 export const outLogin = () => {
   return request.post('/user/logout');

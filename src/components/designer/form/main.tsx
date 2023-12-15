@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { decode, encode, isEmpty } from 'react-core-form-tools';
 import { FormDesigner } from 'react-core-form-designer';
-import { message, notification } from 'antd';
+import { Message, Notification } from '@arco-design/web-react';
 import Header from './header';
 import { update } from '@/pages/dashboard/services';
 
@@ -20,7 +20,7 @@ export default ({ schemaEntity }) => {
       size: Number(new Blob([JSON.stringify(data)]).size / 1024),
     });
     if (code === 200 && flag) {
-      notification.success({
+      Notification.success({
         message: '提示',
         description: '保存成功',
       });
@@ -52,7 +52,7 @@ export default ({ schemaEntity }) => {
           <FormDesigner.RegisterWidgets />
           <FormDesigner.FormCanvas
             onCtrlS={async () => {
-              const hide = message.loading('保存中');
+              const hide = Message.loading('保存中');
               await saveOrUpdate();
               hide();
             }}

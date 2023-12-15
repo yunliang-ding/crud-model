@@ -1,17 +1,20 @@
 /* eslint-disable no-console */
-import { Result, Button } from 'antd';
-import { FrownOutlined } from '@ant-design/icons';
-import { useEffect } from 'react';
+import { Result, Button } from '@arco-design/web-react';
+import { IconRobot } from '@arco-design/web-react/icon';
+import { useRouteError } from 'react-router-dom';
 
-export default (props) => {
-  useEffect(() => {
-    console.log('错误捕获', props.error.message);
-  }, []);
+export default () => {
+  const error = useRouteError();
   return (
     <Result
       status="warning"
-      icon={<FrownOutlined />}
-      title="很抱歉，您的操作导致系统出现了一些问题"
+      icon={<IconRobot />}
+      title={
+        <div>
+          <h1>很抱歉，页面出现了一些问题</h1>
+          <span style={{ color: 'red' }}>{String(error)}</span>
+        </div>
+      }
       extra={
         <>
           <Button

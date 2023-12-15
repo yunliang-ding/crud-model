@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Button, CardForm, CreateDrawer } from 'react-core-form';
-import { message, Space, Input } from 'antd';
+import { Message, Space, Input } from '@arco-design/web-react';
 import { openRequestConfigDrawer } from '../request-config';
 import { copyImg } from '@/util';
 import { APPID } from '@/app';
@@ -109,7 +109,7 @@ export default ({ formDesignerRef, schemaEntity, saveOrUpdate }) => {
                 },
               });
             } else {
-              message.info('暂无模型数据.');
+              Message.info('暂无模型数据.');
             }
           }}
         >
@@ -129,7 +129,7 @@ export default ({ formDesignerRef, schemaEntity, saveOrUpdate }) => {
                 document.querySelector('.app-form-render-result .ant-card'),
               );
             } else {
-              message.info('暂无模型数据.');
+              Message.info('暂无模型数据.');
             }
           }}
         >
