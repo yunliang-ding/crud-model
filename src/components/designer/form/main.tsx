@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { decode, encode, isEmpty } from 'react-core-form-tools';
+import { decode, encode } from 'react-core-form-tools';
 import { FormDesigner } from 'react-core-form-designer';
 import { Message, Notification } from '@arco-design/web-react';
 import Header from './header';
@@ -9,10 +9,11 @@ export default ({ schemaEntity }) => {
   const formDesignerRef: any = useRef({});
   /** 更新模型 */
   const saveOrUpdate = async (flag = true) => {
+    const store = formDesignerRef.current.getStore();
     const data = {
-      ...formDesignerRef.current.formProps,
-      schema: formDesignerRef.current.schema,
-      selectSchema: formDesignerRef.current.selectSchema,
+      schema: store.schema,
+      formProps: store.formProps,
+      selectedSchema: store.selectedSchema,
     };
     const { code } = await update({
       ...schemaEntity,
@@ -29,15 +30,8 @@ export default ({ schemaEntity }) => {
   /** 设置模型 */
   useEffect(() => {
     if (schemaEntity.schema) {
-      const obj = JSON.parse(decode(schemaEntity.schema));
-      const formProps = { ...obj };
-      delete formProps.schema;
-      delete formProps.selectSchema;
-      // if (!isEmpty(formProps)) {
-      //   formDesignerRef.current.setFormProps(formProps);
-      // }
-      // formDesignerRef.current.setSchema(obj.schema || []);
-      // formDesignerRef.current.setSelectSchema(obj.selectSchema || {});
+      const newStore = JSON.parse(decode(schemaEntity.schema));
+      formDesignerRef.current.update(newStore);
     }
   }, []);
   return (

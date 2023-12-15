@@ -1,5 +1,5 @@
-import { useRef } from 'react';
-import { decode, encode, isEmpty } from 'react-core-form-tools';
+import { useEffect, useRef } from 'react';
+import { decode, encode } from 'react-core-form-tools';
 import { Message, Notification } from '@arco-design/web-react';
 import { TableDesigner } from 'react-core-form-designer';
 import { getList, update } from '@/pages/dashboard/services';
@@ -9,11 +9,12 @@ export default ({ schemaEntity }) => {
   const tableDesignerRef: any = useRef({});
   // 更新模型
   const saveOrUpdate = async (flag = true) => {
+    const store = tableDesignerRef.current.getStore();
     const data = {
-      formProps: tableDesignerRef.current.formProps,
-      schema: tableDesignerRef.current.schema,
-      tableProps: tableDesignerRef.current.tableProps,
-      columns: tableDesignerRef.current.columns,
+      formProps: store.formProps,
+      schema: store.schema,
+      tableProps: store.tableProps,
+      columns: store.columns,
     };
     const { code }: any = await update({
       ...schemaEntity,
@@ -27,11 +28,13 @@ export default ({ schemaEntity }) => {
       });
     }
   };
-  const obj = JSON.parse(decode(schemaEntity.schema));
-  let initialValues = undefined;
-  if (!isEmpty(obj)) {
-    initialValues = obj;
-  }
+  /** 设置模型 */
+  useEffect(() => {
+    if (schemaEntity.schema) {
+      const newStore = JSON.parse(decode(schemaEntity.schema));
+      tableDesignerRef.current.update(newStore);
+    }
+  }, [])
   return (
     <div className="table-designer-playground">
       <Header
@@ -40,7 +43,7 @@ export default ({ schemaEntity }) => {
         tableDesignerRef={tableDesignerRef}
       />
       <div className="table-designer-playground-body">
-        <TableDesigner ref={tableDesignerRef} initialValues={initialValues}>
+        <TableDesigner ref={tableDesignerRef}>
           <TableDesigner.RegisterWidgets />
           <TableDesigner.TableCanvas
             onCtrlS={async () => {
