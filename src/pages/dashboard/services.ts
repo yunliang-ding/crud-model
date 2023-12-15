@@ -1,4 +1,4 @@
-import { request } from 'ice';
+import { request } from 'lyr';
 
 export const getList = (data) => {
   return request.post('/crud/list', data);

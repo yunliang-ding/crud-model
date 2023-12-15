@@ -4,11 +4,11 @@ import { CreateModal } from 'react-core-form';
 import { Avatar, Dropdown, Empty, Menu, Spin } from '@arco-design/web-react';
 import Sider from './sider';
 import View from '@/pages/view';
-import formSchema from './form.schema';
+import formSchema from './schema';
 import { outLogin } from '@/services/common';
 import { getList } from './services';
 import userStore from '@/store/user';
-import AlertNotice from '@/layouts/alert-notice';
+import AlertNotice from '@/layouts/footer-render';
 import './index.less';
 
 const prefixCls = 'app-form-designer-dashboard';
@@ -79,9 +79,10 @@ export default () => {
               {name.substring(0, 1)}
             </Avatar>
             <Dropdown
-              overlay={
+              droplist={
                 <Menu>
                   <Menu.Item
+                    key="1"
                     onClick={async () => {
                       const { code } = await outLogin();
                       if (code === 200) {
@@ -107,11 +108,10 @@ export default () => {
         }
       >
         <div className={`${prefixCls}-main-sider`}>
-          <Spin spinning={spin}>
+          <Spin loading={spin}>
             {expand && (
               <Sider
                 items={data}
-                setItems={setData}
                 setCurrentMenuId={setCurrentMenuId}
                 currentMenuId={currentMenuId}
                 prefixCls={prefixCls}
@@ -132,12 +132,13 @@ export default () => {
         </div>
         <div className={`${prefixCls}-main-content`}>
           {currentMenuId ? (
-            <View type={currentMenu?.type} schemaId={currentMenu?.id} key={currentMenu?.id} />
-          ) : (
-            <Empty
-              image={Empty.PRESENTED_IMAGE_SIMPLE}
-              description="暂无数据，请先创建数据模型"
+            <View
+              type={currentMenu?.type}
+              schemaId={currentMenu?.id}
+              key={currentMenu?.id}
             />
+          ) : (
+            <Empty description="暂无数据，请先创建数据模型" />
           )}
         </div>
       </div>

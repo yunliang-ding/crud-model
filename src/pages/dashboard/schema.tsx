@@ -23,8 +23,8 @@ export default ({
       });
       if (code === 200) {
         Notification.success({
-          message: '提示',
-          description: '创建成功',
+          title: '提示',
+          content: '创建成功',
         });
         onSearch();
       } else {

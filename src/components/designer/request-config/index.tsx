@@ -98,15 +98,15 @@ const requestConfigDrawer = (schemaEntity) =>
     ],
     async onSubmit(values) {
       const services = encode(JSON.stringify(values));
-      const { code } = await update({
+      const { code }: any = await update({
         ...schemaEntity,
         services,
       });
       if (code === 200) {
         schemaEntity.services = services;
         Notification.success({
-          message: '提示',
-          description: '保存成功',
+          title: '提示',
+          content: '保存成功',
         });
       } else {
         return Promise.reject();

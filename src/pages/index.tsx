@@ -1,5 +1,5 @@
-import { Redirect } from 'ice';
+import { Navigate } from 'react-router-dom';
 
 export default () => {
-  return <Redirect to="/dashboard" />;
+  return <Navigate to="/dashboard" />;
 };

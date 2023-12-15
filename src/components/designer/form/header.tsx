@@ -57,7 +57,7 @@ export default ({ formDesignerRef, schemaEntity, saveOrUpdate }) => {
               value={name}
               autoFocus
               onChange={(e) => {
-                setName(e.target.value);
+                setName(e);
               }}
               onBlur={saveName}
               onPressEnter={saveName}

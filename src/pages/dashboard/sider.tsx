@@ -1,6 +1,6 @@
 import { Button, CreateModal } from 'react-core-form';
-import { Dropdown, Menu, notification, Empty } from '@arco-design/web-react';
-import formSchema from './form.schema';
+import { Dropdown, Menu, Notification, Empty } from '@arco-design/web-react';
+import formSchema from './schema';
 import { remove } from './services';
 import { Icon } from '@/util';
 
@@ -12,17 +12,17 @@ export default ({
   prefixCls,
 }) => {
   return items.length === 0 ? (
-    <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description="暂无数据" />
+    <Empty description="暂无数据" />
   ) : (
     <>
       {items.map((item: any) => {
         return (
           <Dropdown
-            overlay={
+            droplist={
               <Menu className="sider-dropdown">
-                <Menu.Item>
+                <Menu.Item key=''>
                   <Button
-                    type="link"
+                    type="text"
                     onClick={() => {
                       CreateModal({
                         title: `创建模型基于《${item.name}》`,
@@ -41,10 +41,10 @@ export default ({
                     复制
                   </Button>
                 </Menu.Item>
-                <Menu.Item>
+                <Menu.Item key=''>
                   <Button
                     spin
-                    type="link"
+                    type="text"
                     confirm={{
                       title: '提示',
                       content: `是否确认删除模型(${item.name})?`,
@@ -52,9 +52,9 @@ export default ({
                     onClick={async () => {
                       const { code } = await remove(item.id);
                       if (code === 200) {
-                        notification.success({
-                          message: '提示',
-                          description: '删除成功',
+                        Notification.success({
+                          title: '提示',
+                          content: '删除成功',
                         });
                         const first = await query();
                         // 删除的是当前的处理下选中项目

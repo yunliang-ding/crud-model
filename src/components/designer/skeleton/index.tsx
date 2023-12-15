@@ -7,46 +7,46 @@ export default () => {
       <div className="form-designer-playground-header">
         <div>
           <Space>
-            <Skeleton.Input active />
-            <Skeleton.Input active />
+            <Skeleton animation />
+            <Skeleton animation />
           </Space>
         </div>
         <div>
           <Space>
-            <Skeleton.Button active />
-            <Skeleton.Button active />
-            <Skeleton.Button active />
-            <Skeleton.Button active />
+            <Skeleton animation />
+            <Skeleton animation />
+            <Skeleton animation />
+            <Skeleton animation />
           </Space>
         </div>
       </div>
       <div className="form-designer-playground-body app-skeleton">
         <div className="widgets-panel">
-          <Skeleton active />
-          <Skeleton active />
-          <Skeleton active />
-          <Skeleton active />
-          <Skeleton active />
-          <Skeleton active />
-          <Skeleton active />
-          <Skeleton active />
-          <Skeleton active />
+          <Skeleton animation />
+          <Skeleton animation />
+          <Skeleton animation />
+          <Skeleton animation />
+          <Skeleton animation />
+          <Skeleton animation />
+          <Skeleton animation />
+          <Skeleton animation />
+          <Skeleton animation />
         </div>
         <div className="table-canvas from-canvas">
-          <Skeleton active />
-          <Skeleton active />
-          <Skeleton active />
+          <Skeleton animation />
+          <Skeleton animation />
+          <Skeleton animation />
         </div>
         <div className="props-config-panel">
-          <Skeleton active />
-          <Skeleton active />
-          <Skeleton active />
-          <Skeleton active />
-          <Skeleton active />
-          <Skeleton active />
-          <Skeleton active />
-          <Skeleton active />
-          <Skeleton active />
+          <Skeleton animation />
+          <Skeleton animation />
+          <Skeleton animation />
+          <Skeleton animation />
+          <Skeleton animation />
+          <Skeleton animation />
+          <Skeleton animation />
+          <Skeleton animation />
+          <Skeleton animation />
         </div>
       </div>
     </div>

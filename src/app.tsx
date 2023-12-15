@@ -4,6 +4,7 @@ import Loading from '@/components/loading';
 import { Notification } from '@arco-design/web-react';
 import { Icon } from './util';
 import { userInfo } from '@/services/common';
+import "nprogress/nprogress.css";
 
 export const APPID = 2;
 

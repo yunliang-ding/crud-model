@@ -22,8 +22,8 @@ export default ({ schemaEntity }) => {
     });
     if (code === 200 && flag) {
       Notification.success({
-        message: '提示',
-        description: '保存成功',
+        title: '提示',
+        content: '保存成功',
       });
     }
   };
@@ -54,7 +54,7 @@ export default ({ schemaEntity }) => {
               const {
                 code,
                 data: { data },
-              } = await getList({ type: 'form', pageSize: 100 });
+              }: any = await getList({ type: 'form', pageSize: 100 });
               return code === 200
                 ? data.map((item) => {
                     return {

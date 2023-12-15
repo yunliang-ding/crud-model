@@ -34,15 +34,15 @@ export const copyImg = async (element) => {
               () => {
                 res(true);
                 Notification.success({
-                  message: '提示',
-                  description: '已保存到粘贴板',
+                  title: '提示',
+                  content: '已保存到粘贴板',
                 });
               },
               () => {
                 res(true);
                 Notification.warning({
-                  message: '提示',
-                  description: '保存截图失败',
+                  title: '提示',
+                  content: '保存截图失败',
                 });
               },
             );
