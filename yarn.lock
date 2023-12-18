@@ -3369,10 +3369,10 @@ react-core-form-code-editor@1.0.1:
     lodash "4.17.21"
     react-contexify "5.0.0"
 
-react-core-form-designer@1.0.4:
-  version "1.0.4"
-  resolved "https://registry.npmmirror.com/react-core-form-designer/-/react-core-form-designer-1.0.4.tgz#65bb2b818910d1003f3e7da08b2e23ceb5557ce4"
-  integrity sha512-lT6eC6+c7LQ89T26UhQmDE0nNI+l2SnjksZ6NytRpUJMvw56WwVgREC/GAZEPsBxIkVC6ufUt7CtOm9gelOqLA==
+react-core-form-designer@1.0.5:
+  version "1.0.5"
+  resolved "https://registry.npmmirror.com/react-core-form-designer/-/react-core-form-designer-1.0.5.tgz#05fb47d1f0c83ccd0a7cce0f65e98870e05f8b4a"
+  integrity sha512-O/2gUWr+UtR4jlNfS2FNx4qFXCCJwUBBn2tdsvp6HjI+sGFmm5ZcHgUR+7XZms32Lc0pQLgSNm/C+MqC3lGoJw==
   dependencies:
     immutability-helper "3.1.1"
     lodash "4.17.21"
