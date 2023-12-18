@@ -1,14 +1,8 @@
 /* eslint-disable no-nested-ternary */
 import { useEffect, useState } from 'react';
 import { CreateModal } from 'react-core-form';
-import {
-  Avatar,
-  Dropdown,
-  Empty,
-  Menu,
-  Select,
-} from '@arco-design/web-react';
-import View from '@/pages/view';
+import { Avatar, Dropdown, Empty, Menu, Select } from '@arco-design/web-react';
+import Edit from '@/pages/edit';
 import formSchema from './schema';
 import { outLogin } from '@/services/common';
 import { getList } from './services';
@@ -112,9 +106,9 @@ export default () => {
         ) : (
           <div className={`${prefixCls}-main-content`}>
             {currentMenuId ? (
-              <View
+              <Edit
                 type={currentMenu?.type}
-                schemaId={currentMenu?.id}
+                id={currentMenu?.id}
                 key={currentMenu?.id}
               />
             ) : (
