@@ -4,8 +4,6 @@ import { APPID } from '@/app';
 import axios from 'axios';
 import './index.less';
 
-const PreviewRender: any = CrudModelRender;
-
 export default () => {
   const { id }: any = getUrlSearchParams(location.hash);
   return (
@@ -14,8 +12,9 @@ export default () => {
       <div className="designer-preview-wapper-sider">
         <div className="designer-preview-wapper-sider-left" />
         <div className="designer-preview-wapper-sider-right">
-          <PreviewRender
+          <CrudModelRender
             schemaId={id}
+            baseURL="/proxy"
             appId={APPID}
             require={{
               request: axios.create({
