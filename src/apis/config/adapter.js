@@ -1,8 +1,6 @@
 const fileCache = require('think-cache-file');
-const nunjucks = require('think-view-nunjucks');
-const fileSession = require('think-session-file');
 const mysql = require('think-model-mysql');
-const {Console, File, DateFile} = require('think-logger3');
+const { Console, File, DateFile } = require('think-logger3');
 const socketio = require('think-websocket-socket.io');
 const path = require('path');
 const isDev = think.env === 'development';
@@ -14,14 +12,14 @@ const isDev = think.env === 'development';
 exports.cache = {
   type: 'file',
   common: {
-    timeout: 24 * 60 * 60 * 1000 // millisecond
+    timeout: 24 * 60 * 60 * 1000, // millisecond
   },
   file: {
     handle: fileCache,
     cachePath: path.join(think.ROOT_PATH, 'runtime/cache'), // absoulte path is necessarily required
     pathDepth: 1,
-    gcInterval: 24 * 60 * 60 * 1000 // gc interval
-  }
+    gcInterval: 24 * 60 * 60 * 1000, // gc interval
+  },
 };
 
 /**
@@ -33,7 +31,7 @@ exports.model = {
   common: {
     logConnect: isDev,
     logSql: isDev,
-    logger: msg => think.logger.info(msg)
+    logger: (msg) => think.logger.info(msg),
   },
   mysql: {
     handle: mysql,
@@ -44,43 +42,8 @@ exports.model = {
     port: '',
     user: 'root',
     password: 'root',
-    dateStrings: true
-  }
-};
-
-/**
- * session adapter config
- * @type {Object}
- */
-exports.session = {
-  type: 'file',
-  common: {
-    cookie: {
-      name: 'thinkjs'
-      // keys: ['werwer', 'werwer'],
-      // signed: true
-    }
+    dateStrings: true,
   },
-  file: {
-    handle: fileSession,
-    sessionPath: path.join(think.ROOT_PATH, 'runtime/session')
-  }
-};
-
-/**
- * view adapter config
- * @type {Object}
- */
-exports.view = {
-  type: 'nunjucks',
-  common: {
-    viewPath: path.join(think.ROOT_PATH, 'www'),
-    sep: '/',
-    extname: '.html'
-  },
-  nunjucks: {
-    handle: nunjucks
-  }
 };
 
 /**
@@ -90,14 +53,14 @@ exports.view = {
 exports.logger = {
   type: isDev ? 'console' : 'dateFile',
   console: {
-    handle: Console
+    handle: Console,
   },
   file: {
     handle: File,
     backups: 10, // max chunk number
     absolute: true,
     maxLogSize: 50 * 1024, // 50M
-    filename: path.join(think.ROOT_PATH, 'logs/app.log')
+    filename: path.join(think.ROOT_PATH, 'logs/app.log'),
   },
   dateFile: {
     handle: DateFile,
@@ -105,8 +68,8 @@ exports.logger = {
     absolute: true,
     pattern: '-yyyy-MM-dd',
     alwaysIncludePattern: true,
-    filename: path.join(think.ROOT_PATH, 'logs/app.log')
-  }
+    filename: path.join(think.ROOT_PATH, 'logs/app.log'),
+  },
 };
 
 exports.websocket = {
@@ -116,12 +79,11 @@ exports.websocket = {
   },
   socketio: {
     handle: socketio,
-    // allowOrigin: '127.0.0.1:8360',  // 默认所有的域名都允许访问
-    path: '/socket.io',             // 默认 '/socket.io'
-    adapter: null,                  // 默认无 adapter
+    path: '/socket.io', // 默认 '/socket.io'
+    adapter: null, // 默认无 adapter
     messages: {
       open: '/websocket/open',
-      addUser: '/websocket/addUser'
-    }
-  }
-}
+      addUser: '/websocket/addUser',
+    },
+  },
+};

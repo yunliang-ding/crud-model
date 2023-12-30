@@ -1,14 +1,8 @@
-declare module '*.module.less' {
-  const classes: { [key: string]: string };
-  export default classes;
-}
-
-declare module '*.module.css' {
-  const classes: { [key: string]: string };
-  export default classes;
-}
-
-declare module '*.module.scss' {
-  const classes: { [key: string]: string };
-  export default classes;
+interface LayoutProps {
+  title: string;
+  status: 'login' | 'loading' | 'error' | 'noPermissions' | 'userDisabled';
+  compact?: boolean;
+  dark?: boolean;
+  collapsed?: boolean;
+  primaryColor?: string;
 }

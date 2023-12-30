@@ -4,7 +4,7 @@ import { CreateModal } from 'react-core-form';
 import { Avatar, Dropdown, Empty, Menu, Select } from '@arco-design/web-react';
 import Edit from '@/pages/edit';
 import formSchema from './schema';
-import { outLogin } from '@/services/common';
+import { outLogin } from '@/services';
 import { getList } from './services';
 import userStore from '@/store/user';
 import { IconPlus } from '@arco-design/web-react/icon';
