@@ -4,7 +4,8 @@
   "description": "crud模型搭建",
   "scripts": {
     "start": "lyr dev",
-    "build": "lyr build"
+    "build": "lyr build",
+    "deploy": "lyr deploy"
   },
   "dependencies": {
     "axios": "1.6.2",
@@ -21,7 +22,7 @@
     "react-color": "2.19.3"
   },
   "devDependencies": {
-    "lyr-cli": "0.0.32",
+    "lyr-cli": "1.0.0",
     "typescript": "5.3.2",
     "@types/react": "17.0.2",
     "@types/react-dom": "17.0.2"
