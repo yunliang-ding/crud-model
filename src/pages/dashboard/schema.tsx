@@ -1,6 +1,6 @@
 import { Notification } from '@arco-design/web-react';
-import { SchemaProps } from 'react-core-form';
-import { encode } from 'react-core-form-tools';
+import { SchemaProps } from 'lyr-design';
+import { encode } from 'lyr-extra';
 import { add } from './services';
 
 export default ({

@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Button, CreateDrawer } from 'react-core-form';
+import { Button, CreateDrawer } from 'lyr-design';
 import { Message, Space, Input } from '@arco-design/web-react';
 import { openRequestConfigDrawer } from '../request-config';
-import { CodeEditor } from 'react-core-form-code-editor';
+import { CodeEditor } from 'lyr-code-editor';
 import { IconEdit } from '@arco-design/web-react/icon';
 
 const exportDrawer = CreateDrawer({

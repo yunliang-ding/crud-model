@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import { Button, CardForm, CreateDrawer } from 'react-core-form';
+import { Button, CardForm, CreateDrawer } from 'lyr-design';
 import { Message, Space, Input } from '@arco-design/web-react';
 import { openRequestConfigDrawer } from '../request-config';
 import { copyImg } from '@/util';
-import { babelParse } from 'react-core-form-tools';
-import { CodeEditor } from 'react-core-form-code-editor';
+import { babelParse } from 'lyr-extra';
+import { CodeEditor } from 'lyr-code-editor';
 import { IconEdit } from '@arco-design/web-react/icon';
 
 const exportDrawer = CreateDrawer({

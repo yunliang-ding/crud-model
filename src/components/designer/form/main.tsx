@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
-import { decode, encode } from 'react-core-form-tools';
-import { FormDesigner } from 'react-core-form-designer';
+import { decode, encode } from 'lyr-extra';
+import { FormDesigner } from 'lyr-low-code';
 import { Message, Notification } from '@arco-design/web-react';
 import Header from './header';
 import { update } from '@/pages/dashboard/services';

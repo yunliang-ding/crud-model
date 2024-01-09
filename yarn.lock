@@ -380,11 +380,6 @@
   resolved "https://registry.npmmirror.com/@esbuild/win32-x64/-/win32-x64-0.19.9.tgz#b2da6219b603e3fa371a78f53f5361260d0c5585"
   integrity sha512-oxoQgglOP7RH6iasDrhY+R/3cHrfwIDvRlT4CGChflq6twk8iENeVvMJjmvBb94Ik1Z+93iGO27err7w6l54GQ==
 
-"@icons/material@^0.2.4":
-  version "0.2.4"
-  resolved "https://registry.npmmirror.com/@icons/material/-/material-0.2.4.tgz#e90c9f71768b3736e76d7dd6783fc6c2afa88bc8"
-  integrity sha512-QPcGmICAPbGLGb6F/yNf/KzKqvFx8z5qx3D1yFqVAjoFmXK35EgyW+cJ57Te3CNsmzblwtzakLGFqHPqrfb4Tw==
-
 "@isaacs/cliui@^8.0.2":
   version "8.0.2"
   resolved "https://registry.npmmirror.com/@isaacs/cliui/-/cliui-8.0.2.tgz#b37667b7bc181c168782259bab42474fbf52b550"
@@ -1092,15 +1087,6 @@ asynckit@^0.4.0:
   version "0.4.0"
   resolved "https://registry.npmmirror.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
   integrity sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==
-
-axios@1.6.2:
-  version "1.6.2"
-  resolved "https://registry.npmmirror.com/axios/-/axios-1.6.2.tgz#de67d42c755b571d3e698df1b6504cde9b0ee9f2"
-  integrity sha512-7i24Ri4pmDRfJTR7LDBhsOTtcm+9kjX5WiY1X3wIisx6G9So3pfMkEiU7emUBe46oceVImccTEM3k6C5dbVW8A==
-  dependencies:
-    follow-redirects "^1.15.0"
-    form-data "^4.0.0"
-    proxy-from-env "^1.1.0"
 
 axios@1.6.3:
   version "1.6.3"
@@ -3543,11 +3529,6 @@ locate-path@^5.0.0:
   dependencies:
     p-locate "^4.1.0"
 
-lodash-es@^4.17.15:
-  version "4.17.21"
-  resolved "https://registry.npmmirror.com/lodash-es/-/lodash-es-4.17.21.tgz#43e626c46e6591b7750beb2b50117390c609e3ee"
-  integrity sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==
-
 lodash.clonedeep@4.5.0:
   version "4.5.0"
   resolved "https://registry.npmmirror.com/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
@@ -3608,7 +3589,7 @@ lodash.once@^4.0.0:
   resolved "https://registry.npmmirror.com/lodash.once/-/lodash.once-4.1.1.tgz#0dd3971213c7c56df880977d504c88fb471a97ac"
   integrity sha512-Sb487aTOCr9drQVL8pIxOzVhafOjZN9UU54hiN8PU3uAiSV7lx1yYNpbNmex2PK6dSJoNTSJUUswT651yww3Mg==
 
-lodash@4.17.21, lodash@^4.0.1, lodash@^4.17.15, lodash@^4.17.21, lodash@^4.17.4:
+lodash@^4.17.21, lodash@^4.17.4:
   version "4.17.21"
   resolved "https://registry.npmmirror.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
@@ -3668,10 +3649,10 @@ lru-cache@^6.0.0:
   resolved "https://registry.npmmirror.com/lru-cache/-/lru-cache-10.1.0.tgz#2098d41c2dc56500e6c88584aa656c84de7d0484"
   integrity sha512-/1clY/ui8CzjKFyjdvwPWJUYKiFVXG2I2cY0ssG7h4+hwk+XOIX7ZSG9Q7TW8TW3Kp3BUSqgFWBLgL4PJ+Blag==
 
-lyr-cli@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.npmmirror.com/lyr-cli/-/lyr-cli-1.0.0.tgz#0985625527d544e84ceb0b70cf3734e13757965b"
-  integrity sha512-C29ZVROR/3zid3TQVvfKzGMA+FcHNOoP+66QRazhyzPj+Ig5zCem8dTTK+au+wn7XVR5Qv5dV50buWXBmIDnkA==
+lyr-cli@1.0.2:
+  version "1.0.2"
+  resolved "https://registry.npmmirror.com/lyr-cli/-/lyr-cli-1.0.2.tgz#80edad63506090852f8f9722ed529142733d1996"
+  integrity sha512-FZgPbIUktxP+rznAaPKeqoRL7DqHMivPg7agodxFZIIK1Oe3mPRcSJqv473ZxMJXxRqxw9ITV6ZTBh9KmsNyfA==
   dependencies:
     "@babel/core" "7.23.5"
     "@koa/cors" "4.0.0"
@@ -3707,6 +3688,68 @@ lyr-cli@1.0.0:
     webpackbar "5.0.2"
     ws "8.16.0"
 
+lyr-code-editor@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.npmmirror.com/lyr-code-editor/-/lyr-code-editor-0.0.1.tgz#cfa6021d6f91b46970ab553e206aba885e945b00"
+  integrity sha512-dUWFxXo+7QgPyyE0nmYzTHkr+aL3znDy4WkchGLdFfJEwm4tk5Mo0eZbBZsyV0+hLkQS/rI+65AVijBIrW1b7w==
+  dependencies:
+    "@monaco-editor/loader" "^1.3.3"
+    lodash.clonedeep "4.5.0"
+    lodash.debounce "4.0.8"
+    lyr-store "0.0.1"
+    react-contexify "5.0.0"
+
+lyr-design@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.npmmirror.com/lyr-design/-/lyr-design-0.0.1.tgz#93a5c1e0846ebf9caaa6c20e280063e822c3a21a"
+  integrity sha512-xptCYniwZung0GAR4lMn0sYmphtQ9y1qMkMayNB7DZyQWUrqkH26uVsuXwPKL9RcVJdaoQgqBWsqri9PAxKr9g==
+  dependencies:
+    dayjs "1.11.10"
+    lodash.clonedeepwith "4.5.0"
+    lodash.debounce "4.0.8"
+    lodash.mergewith "4.6.2"
+    lyr-store "0.0.1"
+    react-draggable "4.4.5"
+    react-resizable "3.0.4"
+    react-sortable-hoc "2.0.0"
+
+lyr-extra@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.npmmirror.com/lyr-extra/-/lyr-extra-0.0.1.tgz#3231f7a3007702a39212e49b1d1651aa088c65cf"
+  integrity sha512-otudVragnpTUZi0IaPDNcagx0gmK+0W9r4bH51eC6/nNhrjRTe8lgKEzv+Jim4tpf7d2I954Lck7uPytzR8xHg==
+  dependencies:
+    bignumber.js "9.1.0"
+    docxtemplater "^3.34.3"
+    eval5 "1.4.7"
+    file-saver "^2.0.5"
+    html2canvas "1.4.1"
+    jszip "3.10.1"
+    pizzip "^3.1.4"
+    react-markdown "8.0.7"
+    react-syntax-highlighter "15.5.0"
+    react-to-print "2.13.0"
+    remark-gfm "3.0.1"
+
+lyr-low-code@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.npmmirror.com/lyr-low-code/-/lyr-low-code-0.0.1.tgz#09a2d784744fbf07c9072d7c5ef55cdca6596f2b"
+  integrity sha512-ks88cwCmlzShJGfDkULr29B/3wCkJCj/HRCx59MEOA8NhxkebvyH292MX44eF+OW6uQYmROj0G5OwI5zSO0yQg==
+  dependencies:
+    immutability-helper "3.1.1"
+    lodash.clonedeep "4.5.0"
+    lodash.debounce "4.0.8"
+    lyr-store "0.0.1"
+    react-dnd "14.0.2"
+    react-dnd-html5-backend "14.0.0"
+
+lyr-store@0.0.1:
+  version "0.0.1"
+  resolved "https://registry.npmmirror.com/lyr-store/-/lyr-store-0.0.1.tgz#46f30772010ddec3b4653586e0769cce3e0543db"
+  integrity sha512-al//cPfbbAJ1D3qnwxsTj4oHsyUXvEzOwrBj6sIufyi/OA3EvZ5nwKhk5VOsyk4Iq+KSa8ehFsbKpCs+g0D4jg==
+  dependencies:
+    lodash.clonedeep "4.5.0"
+    use-sync-external-store "^1.2.0"
+
 make-dir@^2.1.0:
   version "2.1.0"
   resolved "https://registry.npmmirror.com/make-dir/-/make-dir-2.1.0.tgz#5f0310e18b8be898cc07009295a30ae41e91e6f5"
@@ -3719,11 +3762,6 @@ markdown-table@^3.0.0:
   version "3.0.3"
   resolved "https://registry.npmmirror.com/markdown-table/-/markdown-table-3.0.3.tgz#e6331d30e493127e031dd385488b5bd326e4a6bd"
   integrity sha512-Z1NL3Tb1M9wH4XESsCDEksWoKTdlUafKc4pt0GRwjUyXaCFZ+dc3g2erqB6zm3szA2IUSi7VnPI+o/9jnxh9hw==
-
-material-colors@^1.2.1:
-  version "1.2.6"
-  resolved "https://registry.npmmirror.com/material-colors/-/material-colors-1.2.6.tgz#6d1958871126992ceecc72f4bcc4d8f010865f46"
-  integrity sha512-6qE4B9deFBIa9YSpOc9O0Sgc43zTeVYbgDT5veRKSlB2+ZuHNoVVxA1L/ckMUayV9Ay9y7Z/SZCLcGteW9i7bg==
 
 mdast-util-definitions@^5.0.0:
   version "5.1.2"
@@ -4680,7 +4718,7 @@ process-nextick-args@~2.0.0:
   resolved "https://registry.npmmirror.com/process-nextick-args/-/process-nextick-args-2.0.1.tgz#7820d9b16120cc55ca9ae7792680ae7dba6d7fe2"
   integrity sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==
 
-prop-types@15.x, prop-types@^15.0.0, prop-types@^15.5.10, prop-types@^15.5.7, prop-types@^15.6.2, prop-types@^15.7.2, prop-types@^15.8.1:
+prop-types@15.x, prop-types@^15.0.0, prop-types@^15.5.7, prop-types@^15.6.2, prop-types@^15.7.2, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.npmmirror.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -4785,84 +4823,12 @@ react-clientside-effect@^1.2.6:
   dependencies:
     "@babel/runtime" "^7.12.13"
 
-react-color@2.19.3:
-  version "2.19.3"
-  resolved "https://registry.npmmirror.com/react-color/-/react-color-2.19.3.tgz#ec6c6b4568312a3c6a18420ab0472e146aa5683d"
-  integrity sha512-LEeGE/ZzNLIsFWa1TMe8y5VYqr7bibneWmvJwm1pCn/eNmrabWDh659JSPn9BuaMpEfU83WTOJfnCcjDZwNQTA==
-  dependencies:
-    "@icons/material" "^0.2.4"
-    lodash "^4.17.15"
-    lodash-es "^4.17.15"
-    material-colors "^1.2.1"
-    prop-types "^15.5.10"
-    reactcss "^1.2.0"
-    tinycolor2 "^1.4.1"
-
 react-contexify@5.0.0:
   version "5.0.0"
   resolved "https://registry.npmmirror.com/react-contexify/-/react-contexify-5.0.0.tgz#11b477550a0ee5a9a144399bc17c7c56bbc60057"
   integrity sha512-2FIp7lxJ6dtfGr8EZ4uVV5p5TQjd0n2h/JU7PrejNIMiCeZWvSVPFh4lj1ZvjXosglBvP7q5JQQ8yUCdSaMSaw==
   dependencies:
     clsx "^1.1.1"
-
-react-core-form-code-editor@1.0.1:
-  version "1.0.1"
-  resolved "https://registry.npmmirror.com/react-core-form-code-editor/-/react-core-form-code-editor-1.0.1.tgz#7763c3ec1fe0f65d40228c52a2fd50a3d7e08891"
-  integrity sha512-4c0vOKLTpd7miIKgDSgMBSen7CHb2rxHDd86Qv6lMtLcRlKqKrBsfGWc6a4iXpEXxKh/rMJXOfL+bJsqiJyntg==
-  dependencies:
-    "@monaco-editor/loader" "^1.3.3"
-    lodash "4.17.21"
-    react-contexify "5.0.0"
-
-react-core-form-designer@1.0.5:
-  version "1.0.5"
-  resolved "https://registry.npmmirror.com/react-core-form-designer/-/react-core-form-designer-1.0.5.tgz#05fb47d1f0c83ccd0a7cce0f65e98870e05f8b4a"
-  integrity sha512-O/2gUWr+UtR4jlNfS2FNx4qFXCCJwUBBn2tdsvp6HjI+sGFmm5ZcHgUR+7XZms32Lc0pQLgSNm/C+MqC3lGoJw==
-  dependencies:
-    immutability-helper "3.1.1"
-    lodash "4.17.21"
-    react-core-form-store "^0.0.4"
-    react-dnd "14.0.2"
-    react-dnd-html5-backend "14.0.0"
-
-react-core-form-store@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.npmmirror.com/react-core-form-store/-/react-core-form-store-0.0.4.tgz#754deb104a95575ff1349a883311665e6e24289f"
-  integrity sha512-MqgAi6orpKlyPjX4NjXkSMaf/UOhPgAqXRhWJOuQptfyFMIeDeFHVXWLTCdjAQpaowMRVCoFz494opqNn12U9A==
-  dependencies:
-    lodash.clonedeep "4.5.0"
-    use-sync-external-store "^1.2.0"
-
-react-core-form-tools@1.0.1:
-  version "1.0.1"
-  resolved "https://registry.npmmirror.com/react-core-form-tools/-/react-core-form-tools-1.0.1.tgz#31993e0f2cb82456c3aa19fdd568c6f7cd6d5ee1"
-  integrity sha512-e8SfNrw86tJIZMJYBThUBhHo/uBR5pGhII7P4WVOXQSNnOlpV6jMZu/Mha6e7teyonMbaARpgbeP2QzoRDJxpA==
-  dependencies:
-    bignumber.js "9.1.0"
-    docxtemplater "^3.34.3"
-    eval5 "1.4.7"
-    file-saver "^2.0.5"
-    html2canvas "1.4.1"
-    jszip "3.10.1"
-    pizzip "^3.1.4"
-    react-markdown "8.0.7"
-    react-syntax-highlighter "15.5.0"
-    react-to-print "2.13.0"
-    remark-gfm "3.0.1"
-
-react-core-form@2.1.1:
-  version "2.1.1"
-  resolved "https://registry.npmmirror.com/react-core-form/-/react-core-form-2.1.1.tgz#b13311e53811a48c639fce29b822764e40aba381"
-  integrity sha512-ALMkH+uKEe2siNmJW5Q38GQLrkAFIPCwszpCFSxM2rIcgRby3CVbMXdEI69Ktkr/1ANqX0wFhSu+Om+4Rco5kQ==
-  dependencies:
-    dayjs "1.11.10"
-    lodash.clonedeepwith "4.5.0"
-    lodash.debounce "4.0.8"
-    lodash.mergewith "4.6.2"
-    react-core-form-store "^0.0.4"
-    react-draggable "4.4.5"
-    react-resizable "3.0.4"
-    react-sortable-hoc "2.0.0"
 
 react-dnd-html5-backend@14.0.0:
   version "14.0.0"
@@ -5022,13 +4988,6 @@ react@^17.0.2:
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
-
-reactcss@^1.2.0:
-  version "1.2.3"
-  resolved "https://registry.npmmirror.com/reactcss/-/reactcss-1.2.3.tgz#c00013875e557b1cf0dfd9a368a1c3dab3b548dd"
-  integrity sha512-KiwVUcFu1RErkI97ywr8nvx8dNOpT03rbnma0SSalTYjkrPYaEajR4a/MRt6DZ46K6arDRbWMNHF+xH7G7n/8A==
-  dependencies:
-    lodash "^4.0.1"
 
 readable-stream@2.3.7:
   version "2.3.7"
@@ -6082,11 +6041,6 @@ thunky@^1.0.2:
   version "1.1.0"
   resolved "https://registry.npmmirror.com/thunky/-/thunky-1.1.0.tgz#5abaf714a9405db0504732bbccd2cedd9ef9537d"
   integrity sha512-eHY7nBftgThBqOyHGVN+l8gF0BucP09fMo0oO/Lb0w1OF80dJv+lDVpXG60WMQvkcxAkNybKsrEIE3ZtKGmPrA==
-
-tinycolor2@^1.4.1:
-  version "1.6.0"
-  resolved "https://registry.npmmirror.com/tinycolor2/-/tinycolor2-1.6.0.tgz#f98007460169b0263b97072c5ae92484ce02d09e"
-  integrity sha512-XPaBkWQJdsf3pLKJV9p4qN/S+fm2Oj8AIPo1BTUhg5oxkvm9+SVEGFdhyOz7tTdUTfvxMiAs4sp6/eZO2Ew+pw==
 
 to-arraybuffer@^1.0.0:
   version "1.0.1"

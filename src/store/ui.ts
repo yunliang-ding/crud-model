@@ -1,5 +1,5 @@
 import { LayoutProps } from '@/types';
-import { create } from 'react-core-form-store';
+import { create } from 'lyr-store';
 
 export default create<LayoutProps>({
   title: 'Crud-Model',

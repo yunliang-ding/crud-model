@@ -1,5 +1,5 @@
-import { getUrlSearchParams } from 'react-core-form-tools';
-import { CrudModelRender } from 'react-core-form-designer';
+import { getUrlSearchParams } from 'lyr-extra';
+import { CrudModelRender } from 'lyr-low-code';
 import { APPID } from '@/app';
 import axios from 'axios';
 import './index.less';

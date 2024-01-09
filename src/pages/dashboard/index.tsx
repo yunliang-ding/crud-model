@@ -1,6 +1,6 @@
 /* eslint-disable no-nested-ternary */
 import { useEffect, useState } from 'react';
-import { CreateModal } from 'react-core-form';
+import { CreateModal } from 'lyr-design';
 import { Avatar, Dropdown, Empty, Menu, Select } from '@arco-design/web-react';
 import Edit from '@/pages/edit';
 import formSchema from './schema';
@@ -43,7 +43,7 @@ export default () => {
     <div className={prefixCls}>
       <div className={`${prefixCls}-header`}>
         <div className={`${prefixCls}-header-title`}>
-          <img src="https://react-core-form.oss-cn-beijing.aliyuncs.com/assets/favicon.ico" />
+          <img src="https://lyr-cli-oss.oss-cn-beijing.aliyuncs.com/assets/favicon.ico" />
           <h2>Crud-Model</h2>
         </div>
         <div className={`${prefixCls}-header-tools`}>

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
-import { decode, encode } from 'react-core-form-tools';
+import { decode, encode } from 'lyr-extra';
 import { Message, Notification } from '@arco-design/web-react';
-import { TableDesigner } from 'react-core-form-designer';
+import { TableDesigner } from 'lyr-low-code';
 import { getList, update } from '@/pages/dashboard/services';
 import Header from './header';
 
