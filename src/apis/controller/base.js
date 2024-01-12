@@ -14,8 +14,7 @@ module.exports = class extends think.Controller {
       ...config,
       headers: {
         ...config.headers,
-        appid: this.ctx.request.header.appid,
-        cookie: this.ctx.request.header.cookie
+        token: this.ctx.request.header.token,
       }
     })
   }

@@ -34,6 +34,16 @@ runApp({
   loading: () => <Loading />,
   /** 加载勾子 */
   getInitData: async () => {
+    /** 处理统一登录回跳逻辑 */
+    const { pathname, search, hash } = location;
+    const urlSearchParams = new URLSearchParams(search);
+    const token = urlSearchParams.get('token');
+    if (token) {
+      localStorage.setItem('token', token);
+      urlSearchParams.delete('token');
+      const newSearch = urlSearchParams.toString();
+      history.replaceState({}, '', `${pathname}${newSearch}${hash}`); // 地址重新刷一下
+    }
     // 查询 userInfo 获取详细信息
     const { code, data }: any = await userInfo();
     const auth = [];
@@ -48,13 +58,12 @@ runApp({
   /** 请求配置 */
   axiosConfig: {
     timeout: 1000 * 180,
-    withCredentials: true,
     maxContentLength: 5000,
     validateStatus: () => true,
     // 拦截请求
     requestInterceptors: (requestConfig) => {
       requestConfig.headers = {
-        appId: APPID.toString(),
+        token: localStorage.getItem('token'),
       };
       NProgress.start();
       return requestConfig;

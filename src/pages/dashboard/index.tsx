@@ -83,12 +83,7 @@ export default () => {
                 <Menu>
                   <Menu.Item
                     key="1"
-                    onClick={async () => {
-                      const { code } = await outLogin();
-                      if (code === 200) {
-                        location.reload();
-                      }
-                    }}
+                    onClick={outLogin}
                   >
                     切换用户
                   </Menu.Item>
