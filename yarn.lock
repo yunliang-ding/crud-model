@@ -3730,10 +3730,10 @@ lyr-extra@^0.0.1:
     react-to-print "2.13.0"
     remark-gfm "3.0.1"
 
-lyr-low-code@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.npmmirror.com/lyr-low-code/-/lyr-low-code-0.0.1.tgz#09a2d784744fbf07c9072d7c5ef55cdca6596f2b"
-  integrity sha512-ks88cwCmlzShJGfDkULr29B/3wCkJCj/HRCx59MEOA8NhxkebvyH292MX44eF+OW6uQYmROj0G5OwI5zSO0yQg==
+lyr-low-code@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.npmmirror.com/lyr-low-code/-/lyr-low-code-0.0.2.tgz#132a942aa1f00168fe77e6187cbf430590ecc7cc"
+  integrity sha512-K/9wE7WSkTLKA4qgvWh5NzaAYz9/OX1tB89NN1qtJ2cUqbZpMTsaPSsQ87ASXy6FoXl7fFUrv8Y0pCgOEEVcOQ==
   dependencies:
     immutability-helper "3.1.1"
     lodash.clonedeep "4.5.0"
