@@ -76,7 +76,7 @@ runApp({
       } = response;
       if (code === 40005) {
         // 登录信息失效，之后重新登录
-        location.href = `http://ulp.yunliang.cloud/login?redirect=${location.href}&appId=${APPID}`;
+        location.href = `https://ulp.yunliang.cloud/login?redirect=${location.href}&appId=${APPID}`;
         return;
       }
       if (code !== 200) {

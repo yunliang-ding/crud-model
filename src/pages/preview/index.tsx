@@ -1,6 +1,5 @@
 import { getUrlSearchParams } from 'lyr-extra';
 import { CrudModelRender } from 'lyr-low-code';
-import { APPID } from '@/app';
 import axios from 'axios';
 import './index.less';
 
@@ -15,14 +14,9 @@ export default () => {
           <CrudModelRender
             schemaId={id}
             baseURL="/proxy"
-            appId={APPID}
             require={{
               request: axios.create({
-                baseURL: 'http://api-online.yunliang.cloud',
-                withCredentials: true,
-                headers: {
-                  appId: APPID as any,
-                },
+                baseURL: 'https://api-online.yunliang.cloud',
               }),
             }}
           />

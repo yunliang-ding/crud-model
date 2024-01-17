@@ -6,7 +6,7 @@ module.exports = class extends Base {
     try {
       const url = this.ctx.originalUrl.replace(
         '/proxy',
-        'http://dev-ops.yunliang.cloud:7200',
+        'https://dev-ops.yunliang.cloud:7200',
       );
       const option = {
         url,

@@ -8,7 +8,7 @@ import { update } from '@/pages/dashboard/services';
 import { CodeEditor, encrypt } from 'lyr-code-editor';
 
 export const defaultRequestConfig = {
-  baseURL: 'http://api-online.yunliang.cloud',
+  baseURL: 'https://api-online.yunliang.cloud',
   code: encrypt(`import request from 'request';
 
 export const getList = (params) => {
