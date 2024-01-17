@@ -13,7 +13,7 @@ export default () => {
         <div className="designer-preview-wapper-sider-right">
           <CrudModelRender
             schemaId={id}
-            baseURL="/proxy"
+            baseURL="https://dev-ops.yunliang.cloud"
             require={{
               request: axios.create({
                 baseURL: 'https://api-online.yunliang.cloud',
