@@ -41,5 +41,6 @@ export default defineConfig({
     'https://lyr-cli-oss.oss-cn-beijing.aliyuncs.com/cdn/aliyun-oss-sdk.min.js',
     'https://lyr-cli-oss.oss-cn-beijing.aliyuncs.com/cdn/lyr-design.min.js',
     'https://lyr-cli-oss.oss-cn-beijing.aliyuncs.com/cdn/socket.io.min.js',
+    'https://lyr-cli-oss.oss-cn-beijing.aliyuncs.com/cdn/track.min.js',
   ],
 });
