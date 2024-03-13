@@ -4,7 +4,7 @@ import axios from 'axios';
 import './index.less';
 
 export default () => {
-  const { id }: any = getUrlSearchParams(location.hash);
+  const { schema, type }: any = getUrlSearchParams(location.hash);
   return (
     <div className="designer-preview-wapper">
       <div className="designer-preview-wapper-header" />
@@ -12,8 +12,8 @@ export default () => {
         <div className="designer-preview-wapper-sider-left" />
         <div className="designer-preview-wapper-sider-right">
           <CrudModelRender
-            schemaId={id}
-            baseURL="https://dev-ops.yunliang.cloud"
+            schema={schema}
+            type={type}
             require={{
               request: axios.create({
                 baseURL: 'https://api-online.yunliang.cloud',

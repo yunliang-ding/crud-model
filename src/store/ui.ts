@@ -1,4 +1,3 @@
-import { LayoutProps } from '@/types';
 import { create } from 'lyr-store';
 
 export default create<LayoutProps>({

@@ -101,8 +101,8 @@ export default ({ tableDesignerRef, schemaEntity, saveOrUpdate }) => {
           type="primary"
           spin
           onClick={async () => {
-            await saveOrUpdate(false);
-            window.open(`#/preview?id=${schemaEntity.id}`);
+            const schema = await saveOrUpdate(false);
+            window.open(`#/preview?schema=${schema}&type=table`);
           }}
         >
           预览

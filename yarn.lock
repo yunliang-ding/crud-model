@@ -3649,10 +3649,10 @@ lru-cache@^6.0.0:
   resolved "https://registry.npmmirror.com/lru-cache/-/lru-cache-10.1.0.tgz#2098d41c2dc56500e6c88584aa656c84de7d0484"
   integrity sha512-/1clY/ui8CzjKFyjdvwPWJUYKiFVXG2I2cY0ssG7h4+hwk+XOIX7ZSG9Q7TW8TW3Kp3BUSqgFWBLgL4PJ+Blag==
 
-lyr-cli@1.0.2:
-  version "1.0.2"
-  resolved "https://registry.npmmirror.com/lyr-cli/-/lyr-cli-1.0.2.tgz#80edad63506090852f8f9722ed529142733d1996"
-  integrity sha512-FZgPbIUktxP+rznAaPKeqoRL7DqHMivPg7agodxFZIIK1Oe3mPRcSJqv473ZxMJXxRqxw9ITV6ZTBh9KmsNyfA==
+lyr-cli@1.0.6:
+  version "1.0.6"
+  resolved "https://registry.npmmirror.com/lyr-cli/-/lyr-cli-1.0.6.tgz#0df956e03521d7298101c56da31a27bff8a1c395"
+  integrity sha512-6ZTUL8/PfbWmpi4U8obyiaE+fBMBq13X9uuKgUtTdYrinmwPFngm4cneH9/2MbYo/ue8GCNgTRIRnyBMUMYlrg==
   dependencies:
     "@babel/core" "7.23.5"
     "@koa/cors" "4.0.0"
@@ -3730,10 +3730,10 @@ lyr-extra@^0.0.1:
     react-to-print "2.13.0"
     remark-gfm "3.0.1"
 
-lyr-low-code@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.npmmirror.com/lyr-low-code/-/lyr-low-code-0.0.2.tgz#132a942aa1f00168fe77e6187cbf430590ecc7cc"
-  integrity sha512-K/9wE7WSkTLKA4qgvWh5NzaAYz9/OX1tB89NN1qtJ2cUqbZpMTsaPSsQ87ASXy6FoXl7fFUrv8Y0pCgOEEVcOQ==
+lyr-low-code@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.npmmirror.com/lyr-low-code/-/lyr-low-code-0.0.3.tgz#ce41c89265f097bef8c5c6bcc603cd86ef887793"
+  integrity sha512-kqIpCvau9ar75ltSra4ibMJckoCwp/t3CXn1aPpx4SrmiM9StnZigElGEzmM51JqQyrDivy+xEkuu74QqTtOhQ==
   dependencies:
     immutability-helper "3.1.1"
     lodash.clonedeep "4.5.0"

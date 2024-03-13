@@ -21,6 +21,7 @@ export default ({ schemaEntity }) => {
         content: '保存成功',
       });
     }
+    return encode(JSON.stringify(store));
   };
   /** 设置模型 */
   useEffect(() => {

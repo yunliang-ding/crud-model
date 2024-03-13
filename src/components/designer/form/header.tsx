@@ -131,10 +131,8 @@ export default ({ formDesignerRef, schemaEntity, saveOrUpdate }) => {
           type="primary"
           spin
           onClick={async () => {
-            await saveOrUpdate(false);
-            window.open(
-              `#/preview?id=${schemaEntity.id}`,
-            );
+            const schema = await saveOrUpdate(false);
+            window.open(`#/preview?schema=${schema}&type=form`);
           }}
         >
           预览
