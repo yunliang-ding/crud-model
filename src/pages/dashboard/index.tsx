@@ -1,8 +1,15 @@
 /* eslint-disable no-nested-ternary */
 import { useEffect, useState } from 'react';
-import { CreateModal } from 'lyr-design';
-import { Avatar, Dropdown, Empty, Menu, Select } from '@arco-design/web-react';
-import Edit from '@/pages/edit';
+import { decode } from 'lyr-extra';
+import { CreateModal } from 'lyr-component';
+import {
+  Avatar,
+  Card,
+  Dropdown,
+  Empty,
+  Menu,
+  Space,
+} from '@arco-design/web-react';
 import formSchema from './schema';
 import { outLogin } from '@/services';
 import { getList } from './services';
@@ -10,6 +17,7 @@ import userStore from '@/store/user';
 import { IconPlus } from '@arco-design/web-react/icon';
 import Loading from '@/components/loading';
 import './index.less';
+import { CodeEditor } from 'lyr-code-editor';
 
 const prefixCls = 'app-form-designer-dashboard';
 
@@ -17,7 +25,6 @@ export default () => {
   const { name, avatarUrl } = userStore.use();
   const [data, setData]: any = useState([]);
   const [spin, setSpin] = useState(false);
-  const [currentMenuId, setCurrentMenuId]: any = useState();
   const query = async () => {
     setSpin(true);
     const {
@@ -34,12 +41,11 @@ export default () => {
     return data[0];
   };
   useEffect(() => {
-    query().then((res) => {
-      setCurrentMenuId(res?.id);
-    });
+    query();
   }, []);
-  const currentMenu: any = data.find((i: any) => i.id === currentMenuId);
-  return (
+  return spin ? (
+    <Loading />
+  ) : (
     <div className={prefixCls}>
       <div className={`${prefixCls}-header`}>
         <div className={`${prefixCls}-header-title`}>
@@ -47,14 +53,6 @@ export default () => {
           <h2>Crud-Model</h2>
         </div>
         <div className={`${prefixCls}-header-tools`}>
-          <Select
-            value={currentMenuId}
-            onChange={(v) => {
-              setCurrentMenuId(v);
-            }}
-            options={data.map((i) => ({ label: i.name, value: i.id }))}
-            style={{ width: 200 }}
-          />
           <div
             title="点击添加"
             className={`${prefixCls}-header-title-action`}
@@ -64,8 +62,7 @@ export default () => {
               }).open(
                 formSchema({
                   onSearch: async () => {
-                    const first = await query();
-                    setCurrentMenuId(first?.id);
+                    await query();
                   },
                 }),
               );
@@ -81,10 +78,7 @@ export default () => {
             <Dropdown
               droplist={
                 <Menu>
-                  <Menu.Item
-                    key="1"
-                    onClick={outLogin}
-                  >
+                  <Menu.Item key="1" onClick={outLogin}>
                     切换用户
                   </Menu.Item>
                 </Menu>
@@ -95,21 +89,54 @@ export default () => {
           </div>
         </div>
       </div>
-      <div className={`${prefixCls}-main`}>
-        {spin ? (
-          <Loading />
+      <div className={`${prefixCls}-body`}>
+        {data.length === 0 ? (
+          <Empty />
         ) : (
-          <div className={`${prefixCls}-main-content`}>
-            {currentMenuId ? (
-              <Edit
-                type={currentMenu?.type}
-                id={currentMenu?.id}
-                key={currentMenu?.id}
-              />
-            ) : (
-              <Empty description="暂无数据，请先创建数据模型" />
-            )}
-          </div>
+          data.map((item) => {
+            return (
+              <div>
+                <Card
+                  style={{ width: 360 }}
+                  title={item.name}
+                  key={item.id}
+                  extra={
+                    <Space>
+                      <a
+                        onClick={() => {
+                          window.open(
+                            `/#/edit?id=${item.id}&type=${item.type}`,
+                          );
+                        }}
+                      >
+                        编辑
+                      </a>
+                      <a
+                        onClick={() => {
+                          window.open(`/#/preview?schema=${item.pureSchema}&type=${item.type}`);
+                        }}
+                      >
+                        预览
+                      </a>
+                    </Space>
+                  }
+                >
+                  <CodeEditor
+                    value={decode(item.pureSchema)}
+                    readOnly
+                    minimapEnabled={false}
+                    theme="vs"
+                  />
+                </Card>
+                <div className="arco-card-footer">
+                  <Space>
+                    <span>更新时间</span>
+                    <a>{item.updateTime}</a>
+                  </Space>
+                </div>
+              </div>
+            );
+          })
         )}
       </div>
     </div>

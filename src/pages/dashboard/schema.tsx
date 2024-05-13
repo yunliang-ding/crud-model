@@ -1,5 +1,5 @@
 import { Notification } from '@arco-design/web-react';
-import { SchemaProps } from 'lyr-design';
+import { SchemaProps } from 'lyr-component';
 import { encode } from 'lyr-extra';
 import { add } from './services';
 
@@ -34,13 +34,13 @@ export default ({
     },
     schema: [
       {
-        type: 'Input',
+        widget: 'Input',
         name: 'name',
         label: '模型名称',
         required: true,
       },
       {
-        type: 'RadioGroup',
+        widget: "RadioGroup",
         name: 'type',
         label: '设计器',
         disabled: initialValues.schema,

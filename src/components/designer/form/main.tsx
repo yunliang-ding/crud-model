@@ -1,17 +1,20 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { decode, encode } from 'lyr-extra';
 import { FormDesigner } from 'lyr-low-code';
-import { Message, Notification } from '@arco-design/web-react';
-import Header from './header';
+import { Message, Notification, Space } from '@arco-design/web-react';
 import { update } from '@/pages/dashboard/services';
+import { Button } from 'lyr-component';
+import { IconSave } from '@arco-design/web-react/icon';
+import { copyImg } from '@/util';
 
 export default ({ schemaEntity }) => {
-  const formDesignerRef: any = useRef({});
+  const [form] = FormDesigner.useForm();
   /** 更新模型 */
   const saveOrUpdate = async (flag = true) => {
-    const store = formDesignerRef.current.getStore();
+    const store = form.getStore();
     const { code } = await update({
       ...schemaEntity,
+      pureSchema: encode(form.getStandardSchema()),
       schema: encode(JSON.stringify(store)),
       size: Number(new Blob([JSON.stringify(store)]).size / 1024),
     });
@@ -27,29 +30,51 @@ export default ({ schemaEntity }) => {
   useEffect(() => {
     if (schemaEntity.schema) {
       const newStore = JSON.parse(decode(schemaEntity.schema));
-      formDesignerRef.current.setStore(newStore);
+      form.setStore(newStore);
     }
   }, []);
   return (
     <div className="form-designer-playground">
-      <Header
-        saveOrUpdate={saveOrUpdate}
-        schemaEntity={schemaEntity}
-        formDesignerRef={formDesignerRef}
-      />
-      <div className="form-designer-playground-body">
-        <FormDesigner ref={formDesignerRef}>
-          <FormDesigner.RegisterWidgets />
-          <FormDesigner.FormCanvas
-            onCtrlS={async () => {
-              const hide = Message.loading('保存中');
-              await saveOrUpdate();
-              hide();
+      <FormDesigner
+        form={form}
+        logo={
+          <Space>
+            <img
+              src="https://lyr-cli-oss.oss-cn-beijing.aliyuncs.com/assets/favicon.ico"
+              width={40}
+            />
+            <h2>FormDesigner</h2>
+          </Space>
+        }
+        extra={[
+          <Button
+            type="primary"
+            spin
+            onClick={async () => {
+              if (form.getStore().schema.length > 0) {
+                await new Promise((res) => {
+                  setTimeout(res, 600);
+                });
+                await copyImg(
+                  document.querySelector('.form-canvas .arco-card-body'),
+                );
+              } else {
+                Message.info('暂无模型数据.');
+              }
             }}
-          />
-          <FormDesigner.PropsConfigPanel />
-        </FormDesigner>
-      </div>
+          >
+            一键截图
+          </Button>,
+          <Button
+            spin
+            onClick={saveOrUpdate}
+            type="primary"
+            icon={<IconSave />}
+          >
+            保存
+          </Button>,
+        ]}
+      />
     </div>
   );
 };

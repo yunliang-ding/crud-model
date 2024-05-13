@@ -2,65 +2,7 @@
   width: 100vw;
   height: 100vh;
   background-color: #eee;
-  &-header {
-    display: flex;
-    height: 46px;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 22px;
-    padding-right: 12px;
-    background-color: #fff;
-    position: relative;
-    margin-bottom: 12px;
-  }
-  &-body {
-    height: calc(100% - 70px);
-    gap: 10px;
-    margin-top: 10px;
-    z-index: 2;
-    padding: 0 10px;
-    display: flex;
-    .widgets-panel {
-      width: 240px;
-      height: 100%;
-      overflow: auto;
-    }
-    .table-canvas {
-      width: calc(100% - 440px);
-      height: 100%;
-      .core-form-table {
-        height: 100%;
-      }
-      .arco-card-head {
-        height: 44px;
-        display: flex;
-        padding-right: 14px;
-        .ant-card-head-wrapper {
-          width: 100%;
-          display: flex;
-          justify-content: space-between;
-        }
-      }
-      .form-canvas-card-box {
-        background: transparent;
-        .ant-card-body {
-          background: transparent;
-          min-width: 400px;
-        }
-      }
-    }
-    .props-config-panel {
-      width: 400px;
-      height: 100%;
-      .ant-segmented {
-        padding: 0;
-        .ant-segmented-group {
-          height: 100%;
-        }
-      }
-      .props-config-panel-body {
-        height: calc(100% - 44px);
-      }
-    }
+  .table-canvas{
+    height: fit-content;
   }
 }

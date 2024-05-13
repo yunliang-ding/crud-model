@@ -56,41 +56,40 @@
       }
     }
   }
-  &-main {
+  &-body {
     height: calc(100% - 48px);
     width: 100%;
     display: flex;
-    position: relative;
-    &-content {
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 20px;
+    padding: 20px;
+    overflow: auto;
+    .arco-empty {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       height: 100%;
+    }
+    .arco-card {
+      height: 280px;
       transition: 0.3s;
-      width: calc(100% - 200px);
-      background-color: #eee;
-      .form-designer-playground,
-      .table-designer-playground {
-        height: 100%;
-      }
-      .ant-empty {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
+      border-bottom: none;
+      .arco-card-body{
+        overflow: auto;
+        height: 234px;
+        padding: 0;
       }
     }
-  }
-  &-main-hidden-sider {
-    .app-form-designer-dashboard-main-sider {
-      width: 20px;
-      transition: 0.3s;
-    }
-    .app-form-designer-dashboard-main-not-expand {
-      left: 10px;
-      transition: 0.3s;
-    }
-    .app-form-designer-dashboard-main-content {
-      width: calc(100% - 20px);
-      transition: 0.3s;
+    .arco-card-footer{
+      height: 46px;
+      align-items: center;
+      display: flex;
+      justify-content: flex-end;
+      color: #666;
+      border: 1px solid #e5e6ea;
+      padding: 0 10px;
     }
   }
 }

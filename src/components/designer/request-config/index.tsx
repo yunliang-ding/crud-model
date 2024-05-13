@@ -2,7 +2,7 @@
 /* eslint-disable no-template-curly-in-string */
 import axios from 'axios';
 import { Notification } from '@arco-design/web-react';
-import { CreateDrawer } from 'lyr-design';
+import { CreateDrawer } from 'lyr-component';
 import { decode, encode } from 'lyr-extra';
 import { update } from '@/pages/dashboard/services';
 import { CodeEditor, encrypt } from 'lyr-code-editor';
@@ -63,18 +63,18 @@ const requestConfigDrawer = (schemaEntity) =>
     },
     schema: [
       {
-        type: 'Input',
+        widget: 'Input',
         hidden: true,
         name: 'id',
       },
       {
-        type: 'Input',
+        widget: 'Input',
         label: '基地址/baseURL',
         name: 'baseURL',
         required: true,
       },
       {
-        type: ({ value, onChange }) => {
+        widget: ({ value, onChange }) => {
           return (
             <CodeEditor
               style={{

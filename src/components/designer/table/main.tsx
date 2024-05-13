@@ -1,17 +1,20 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { decode, encode } from 'lyr-extra';
-import { Message, Notification } from '@arco-design/web-react';
+import { Message, Notification, Space } from '@arco-design/web-react';
 import { TableDesigner } from 'lyr-low-code';
-import { getList, update } from '@/pages/dashboard/services';
-import Header from './header';
+import { update } from '@/pages/dashboard/services';
+import { Button } from 'lyr-component';
+import { IconSave } from '@arco-design/web-react/icon';
+import { copyImg } from '@/util';
 
 export default ({ schemaEntity }) => {
-  const tableDesignerRef: any = useRef({});
+  const [table] = TableDesigner.useTable();
   // 更新模型
   const saveOrUpdate = async (flag = true) => {
-    const store = tableDesignerRef.current.getStore();
+    const store = table.getStore();
     const { code }: any = await update({
       ...schemaEntity,
+      pureSchema: encode(table.getStandardSchema()),
       schema: encode(JSON.stringify(store)),
       size: Number(new Blob([JSON.stringify(store)]).size / 1024),
     });
@@ -27,44 +30,65 @@ export default ({ schemaEntity }) => {
   useEffect(() => {
     if (schemaEntity.schema) {
       const newStore = JSON.parse(decode(schemaEntity.schema));
-      tableDesignerRef.current.setStore(newStore);
+      table.setStore(newStore);
     }
-  }, [])
+  }, []);
   return (
     <div className="table-designer-playground">
-      <Header
-        saveOrUpdate={saveOrUpdate}
-        schemaEntity={schemaEntity}
-        tableDesignerRef={tableDesignerRef}
+      <TableDesigner
+        table={table}
+        logo={
+          <Space>
+            <img
+              src="https://lyr-cli-oss.oss-cn-beijing.aliyuncs.com/assets/favicon.ico"
+              width={40}
+            />
+            <h2>TableDesigner</h2>
+          </Space>
+        }
+        extra={[
+          <Button
+            type="primary"
+            spin
+            onClick={async () => {
+              if (table.getStore().columns.length > 0) {
+                await new Promise((res) => {
+                  setTimeout(res, 600);
+                });
+                await copyImg(
+                  document.querySelector('.table-canvas'),
+                );
+              } else {
+                Message.info('暂无模型数据.');
+              }
+            }}
+          >
+            一键截图
+          </Button>,
+          <Button
+            spin
+            onClick={saveOrUpdate}
+            type="primary"
+            icon={<IconSave />}
+          >
+            保存
+          </Button>,
+        ]}
+        // selectModelOptions={async () => {
+        //   const {
+        //     code,
+        //     data: { data },
+        //   }: any = await getList({ type: 'form', pageSize: 100 });
+        //   return code === 200
+        //     ? data.map((item) => {
+        //         return {
+        //           label: item.name,
+        //           value: item.id,
+        //         };
+        //       })
+        //     : [];
+        // }}
       />
-      <div className="table-designer-playground-body">
-        <TableDesigner ref={tableDesignerRef}>
-          <TableDesigner.RegisterWidgets />
-          <TableDesigner.TableCanvas
-            onCtrlS={async () => {
-              const hide = Message.loading('保存中');
-              await saveOrUpdate();
-              hide();
-            }}
-          />
-          <TableDesigner.PropsConfigPanel
-            selectModelOptions={async () => {
-              const {
-                code,
-                data: { data },
-              }: any = await getList({ type: 'form', pageSize: 100 });
-              return code === 200
-                ? data.map((item) => {
-                    return {
-                      label: item.name,
-                      value: item.id,
-                    };
-                  })
-                : [];
-            }}
-          />
-        </TableDesigner>
-      </div>
     </div>
   );
 };
