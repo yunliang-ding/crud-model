@@ -1,11 +1,10 @@
 import { useEffect } from 'react';
 import { decode, encode } from 'lyr-extra';
 import { FormDesigner } from 'lyr-low-code';
-import { Message, Notification, Space } from '@arco-design/web-react';
+import { Notification, Space } from '@arco-design/web-react';
 import { update } from '@/pages/dashboard/services';
 import { Button } from 'lyr-component';
 import { IconSave } from '@arco-design/web-react/icon';
-import { copyImg } from '@/util';
 
 export default ({ schemaEntity }) => {
   const [form] = FormDesigner.useForm();
@@ -47,24 +46,6 @@ export default ({ schemaEntity }) => {
           </Space>
         }
         extra={[
-          <Button
-            type="primary"
-            spin
-            onClick={async () => {
-              if (form.getStore().schema.length > 0) {
-                await new Promise((res) => {
-                  setTimeout(res, 600);
-                });
-                await copyImg(
-                  document.querySelector('.form-canvas .arco-card-body'),
-                );
-              } else {
-                Message.info('暂无模型数据.');
-              }
-            }}
-          >
-            一键截图
-          </Button>,
           <Button
             spin
             onClick={saveOrUpdate}
