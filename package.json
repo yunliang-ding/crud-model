@@ -12,7 +12,7 @@
     "react-dom": "^17.0.2",
     "lyr-component": "1.0.4",
     "lyr-extra": "^0.0.1",
-    "lyr-low-code": "1.0.4",
+    "lyr-low-code": "1.0.5",
     "lyr-code-editor": "^0.0.1",
     "react-router-dom": "6.21.0",
     "@arco-design/web-react": "2.57.0",

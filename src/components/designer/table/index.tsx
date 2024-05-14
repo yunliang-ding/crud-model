@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { detail } from '@/pages/dashboard/services';
-import Skeleton from '../skeleton';
 import Main from './main';
 import { beforeUnloadListener } from '../form';
+import Loading from '@/components/loading';
 import './index.less';
 
 export default ({ schemaId }) => {
@@ -33,5 +33,5 @@ export default ({ schemaId }) => {
   // useEffect(() => {
   //   .registerGlobalApi(source);
   // }, [source]);
-  return spin ? <Skeleton /> : <Main schemaEntity={schemaEntity} />;
+  return spin ? <Loading /> : <Main schemaEntity={schemaEntity} />;
 };

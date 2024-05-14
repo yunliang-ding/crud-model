@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { detail } from '@/pages/dashboard/services';
-import Skeleton from '../skeleton';
 import Main from './main';
+import Loading from '@/components/loading';
 import './index.less';
 
 export const beforeUnloadListener = (event) => {
@@ -33,5 +33,5 @@ export default ({ schemaId }) => {
       window.removeEventListener('beforeunload', beforeUnloadListener);
     };
   }, []);
-  return spin ? <Skeleton /> : <Main schemaEntity={schemaEntity} />;
+  return spin ? <Loading /> : <Main schemaEntity={schemaEntity} />;
 };
