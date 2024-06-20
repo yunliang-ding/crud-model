@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { detail } from '@/pages/dashboard/services';
 import Main from './main';
-import Loading from '@/components/loading';
+import Loading from '@/.theme/loading';
 import './index.less';
 
 export const beforeUnloadListener = (event) => {

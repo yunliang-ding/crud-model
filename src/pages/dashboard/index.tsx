@@ -15,14 +15,14 @@ import { outLogin } from '@/services';
 import { getList } from './services';
 import userStore from '@/store/user';
 import { IconPlus } from '@arco-design/web-react/icon';
-import Loading from '@/components/loading';
-import './index.less';
+import Loading from '@/.theme/loading';
 import { CodeEditor } from 'lyr-code-editor';
+import './index.less';
 
 const prefixCls = 'app-form-designer-dashboard';
 
 export default () => {
-  const { name, avatarUrl } = userStore.use();
+  const { name, avatarUrl } = userStore.useSnapshot();
   const [data, setData]: any = useState([]);
   const [spin, setSpin] = useState(false);
   const query = async () => {
@@ -125,7 +125,6 @@ export default () => {
                     value={decode(item.pureSchema)}
                     readOnly
                     minimapEnabled={false}
-                    theme="vs"
                   />
                 </Card>
                 <div className="arco-card-footer">

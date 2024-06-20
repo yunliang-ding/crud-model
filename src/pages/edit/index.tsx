@@ -1,5 +1,5 @@
-import DesignerForm from '@/components/designer/form';
-import DesignerTable from '@/components/designer/table';
+import DesignerForm from '@/designer/form';
+import DesignerTable from '@/designer/table';
 import { useSearchParams } from 'react-router-dom';
 
 export default ({ type, id }: any) => {
