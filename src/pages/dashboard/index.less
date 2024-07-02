@@ -76,14 +76,17 @@
       height: 280px;
       transition: 0.3s;
       border-bottom: none;
+      .arco-card-header{
+        height: 36px;
+      }
       .arco-card-body{
         overflow: auto;
-        height: 234px;
+        height: calc(100% - 36px);
         padding: 0;
       }
     }
     .arco-card-footer{
-      height: 46px;
+      height: 36px;
       align-items: center;
       display: flex;
       justify-content: flex-end;
