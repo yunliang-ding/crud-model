@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
-import { decode, encode } from 'lyr-extra';
-import { FormDesigner } from 'lyr-low-code';
+import { decode, encode } from '@yl-d/extra';
+import { FormDesigner } from '@yl-d/low-code';
 import { Notification, Space } from '@arco-design/web-react';
 import { update } from '@/pages/dashboard/services';
-import { Button } from 'lyr-component';
+import { Button } from '@yl-d/components';
 import { IconSave } from '@arco-design/web-react/icon';
 
 export default ({ schemaEntity }) => {

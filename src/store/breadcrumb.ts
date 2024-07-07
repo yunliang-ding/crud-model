@@ -1,6 +1,6 @@
-import { create } from 'lyr-hooks';
+import { createStore } from '@yl-d/components';
 
-export default create({
+export default createStore({
   title: '', // 大标题
   breadcrumb: undefined, // 面包屑
   extra: null,

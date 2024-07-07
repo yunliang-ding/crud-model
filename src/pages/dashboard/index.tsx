@@ -1,7 +1,7 @@
 /* eslint-disable no-nested-ternary */
 import { useEffect, useState } from 'react';
-import { decode } from 'lyr-extra';
-import { CreateModal } from 'lyr-component';
+import { decode } from '@yl-d/extra';
+import { CreateModal } from '@yl-d/components';
 import {
   Avatar,
   Card,
@@ -16,7 +16,7 @@ import { getList } from './services';
 import userStore from '@/store/user';
 import { IconPlus } from '@arco-design/web-react/icon';
 import Loading from '@/.theme/loading';
-import { CodeEditor } from 'lyr-code-editor';
+import { CodeEditor } from '@yl-d/code-editor';
 import './index.less';
 
 const prefixCls = 'app-form-designer-dashboard';

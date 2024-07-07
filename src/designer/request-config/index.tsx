@@ -2,10 +2,10 @@
 /* eslint-disable no-template-curly-in-string */
 import axios from 'axios';
 import { Notification } from '@arco-design/web-react';
-import { CreateDrawer } from 'lyr-component';
-import { decode, encode } from 'lyr-extra';
+import { CreateDrawer } from '@yl-d/components';
+import { decode, encode } from '@yl-d/extra';
 import { update } from '@/pages/dashboard/services';
-import { CodeEditor, encrypt } from 'lyr-code-editor';
+import { CodeEditor, encrypt } from '@yl-d/code-editor';
 
 export const defaultRequestConfig = {
   baseURL: 'https://api-online.yunliang.cloud',

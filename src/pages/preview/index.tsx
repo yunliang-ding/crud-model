@@ -1,5 +1,5 @@
-import { getUrlSearchParams } from 'lyr-extra';
-import { CrudModelRender } from 'lyr-low-code';
+import { getUrlSearchParams } from '@yl-d/extra';
+import { CrudModelRender } from '@yl-d/low-code';
 import axios from 'axios';
 import './index.less';
 

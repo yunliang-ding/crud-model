@@ -1,6 +1,6 @@
-import { create } from 'lyr-hooks';
+import { createStore } from '@yl-d/components';
 
-export default create<LayoutProps>({
+export default createStore<LayoutProps>({
   title: 'Crud-Model',
   primaryColor: '#165dff',
   status: 'loading',

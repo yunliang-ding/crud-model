@@ -1,6 +1,6 @@
 import { Notification } from '@arco-design/web-react';
-import { SchemaProps } from 'lyr-component';
-import { encode } from 'lyr-extra';
+import { SchemaProps } from '@yl-d/components';
+import { encode } from '@yl-d/extra';
 import { add } from './services';
 
 export default ({
