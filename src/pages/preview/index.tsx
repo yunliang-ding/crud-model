@@ -1,4 +1,4 @@
-import { getUrlSearchParams } from '@yl-d/extra';
+import { getUrlSearchParams } from '@yl-d/shared';
 import { CrudModelRender } from '@yl-d/low-code';
 import axios from 'axios';
 import './index.less';

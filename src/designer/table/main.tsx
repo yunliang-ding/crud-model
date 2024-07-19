@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { decode, encode } from '@yl-d/extra';
+import { decode, encode } from '@yl-d/shared';
 import { Notification, Space } from '@arco-design/web-react';
 import { TableDesigner } from '@yl-d/low-code';
 import { update } from '@/pages/dashboard/services';

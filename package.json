@@ -8,7 +8,7 @@
     "deploy": "lyr deploy"
   },
   "dependencies": {
-    "@yl-d/extra": "1.0.0",
+    "@yl-d/shared": "1.0.0",
     "@yl-d/low-code": "1.0.0",
     "@yl-d/code-editor": "1.0.5"
   },

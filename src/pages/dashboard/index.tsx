@@ -1,6 +1,6 @@
 /* eslint-disable no-nested-ternary */
 import { useEffect, useState } from 'react';
-import { decode } from '@yl-d/extra';
+import { decode } from '@yl-d/shared';
 import { CreateModal } from '@yl-d/components';
 import {
   Avatar,

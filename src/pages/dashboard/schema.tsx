@@ -1,6 +1,6 @@
 import { Notification } from '@arco-design/web-react';
 import { SchemaProps } from '@yl-d/components';
-import { encode } from '@yl-d/extra';
+import { encode } from '@yl-d/shared';
 import { add } from './services';
 
 export default ({

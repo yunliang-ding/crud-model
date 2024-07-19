@@ -3,7 +3,7 @@
 import axios from 'axios';
 import { Notification } from '@arco-design/web-react';
 import { CreateDrawer } from '@yl-d/components';
-import { decode, encode } from '@yl-d/extra';
+import { decode, encode } from '@yl-d/shared';
 import { update } from '@/pages/dashboard/services';
 import { CodeEditor, encrypt } from '@yl-d/code-editor';
 
